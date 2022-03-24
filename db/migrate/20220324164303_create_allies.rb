@@ -5,7 +5,7 @@ class CreateAllies < ActiveRecord::Migration[6.1]
       t.string :affiliation
       t.string :image
       t.belongs_to :hero
-
+      
       t.timestamps
     end
   end

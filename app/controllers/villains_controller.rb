@@ -1,7 +1,7 @@
 class VillainsController < ApplicationController
 
     def index
-        render josn: Villain.all, status: :ok
+        render json: Villain.all, status: :ok
     end
 
     def create

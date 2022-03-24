@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
 
     def index
-        render josn: Location.all, status: :ok
+        render json: Location.all, status: :ok
     end
 
     def create
@@ -29,7 +29,7 @@ class LocationsController < ApplicationController
     private
 
     def location_params
-        params.permit(:id, :name, :image :villain_id)
+        params.permit(:id, :name, :image, :villain_id)
     end
 
 end

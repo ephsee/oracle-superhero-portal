@@ -6,7 +6,7 @@ class AlliesController < ApplicationController
 
     def create
         ally = Ally.create(ally_params)
-        rander json: ally, status: :created
+        render json: ally, status: :created
     end
 
     def show
