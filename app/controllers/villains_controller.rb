@@ -6,7 +6,7 @@ class VillainsController < ApplicationController
 
     def create
         villain = Villain.create!(villain_params)
-        rander json: villain, status: :created
+        render json: villain, status: :created
     end
 
     def show

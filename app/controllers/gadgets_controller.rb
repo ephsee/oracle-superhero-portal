@@ -6,7 +6,7 @@ class GadgetsController < ApplicationController
 
     def create
         gadget = Gadget.create(gadget_params)
-        rander json: gadget, status: :created
+        render json: gadget, status: :created
     end
 
     def show

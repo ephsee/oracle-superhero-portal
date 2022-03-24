@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
 
     def create
         location = Location.create!(location_params)
-        rander json: location, status: :created
+        render json: location, status: :created
     end
 
     def show

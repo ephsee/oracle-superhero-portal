@@ -6,7 +6,7 @@ class HerosController < ApplicationController
 
     def create
         hero = Hero.create!(hero_params)
-        rander json: hero, status: :created
+        render json: hero, status: :created
     end
 
     def show
