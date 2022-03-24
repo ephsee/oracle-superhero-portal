@@ -4,6 +4,8 @@ class HerosController < ApplicationController
         render json: Hero.all, status: :ok
     end
 
+    # signup for a new hero should create a new hero in db
+
     def create
         hero = Hero.create!(hero_params)
         render json: hero, status: :created
