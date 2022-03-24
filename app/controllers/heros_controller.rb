@@ -5,7 +5,7 @@ class HerosController < ApplicationController
     end
 
     def create
-        hero = Hero.create(hero_params)
+        hero = Hero.create!(hero_params)
         rander json: hero, status: :created
     end
 
@@ -16,13 +16,13 @@ class HerosController < ApplicationController
 
     def update
         hero = Hero.find(params[:id])
-        hero.update(hero_params)
+        hero.update!(hero_params)
         render json: hero, status: :accepted
     end 
 
     def destroy
         hero = Hero.find(params[:id])
-        hero.destroy
+        hero.destroy!
         head :no_content, status: :gone
     end
 

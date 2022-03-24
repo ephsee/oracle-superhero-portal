@@ -5,7 +5,7 @@ class VillainsController < ApplicationController
     end
 
     def create
-        villain = Villain.create(villain_params)
+        villain = Villain.create!(villain_params)
         rander json: villain, status: :created
     end
 
@@ -16,13 +16,13 @@ class VillainsController < ApplicationController
 
     def update
         villain = Villain.find(params[:id])
-        villain.update(villain_params)
+        villain.update!(villain_params)
         render json: villain, status: :accepted
     end 
 
     def destroy
         villain = Villain.find(params[:id])
-        villain.destroy
+        villain.destroy!
         head :no_content, status: :gone
     end
 

@@ -5,7 +5,7 @@ class AlliesController < ApplicationController
     end
 
     def create
-        ally = Ally.create(ally_params)
+        ally = Ally.create!(ally_params)
         render json: ally, status: :created
     end
 
@@ -16,13 +16,13 @@ class AlliesController < ApplicationController
 
     def update
         ally = Ally.find(params[:id])
-        ally.update(ally_params)
+        ally.update!(ally_params)
         render json: ally, status: :accepted
     end 
 
     def destroy
         ally = Ally.find(params[:id])
-        ally.destroy
+        ally.destroy!
         head :no_content, status: :gone
     end
 

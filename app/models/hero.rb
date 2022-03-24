@@ -5,4 +5,6 @@ class Hero < ApplicationRecord
     has_many :allies
     has_many :gadgets
 
+    validates :name, presence: true, uniqueness: true
+
 end

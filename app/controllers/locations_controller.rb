@@ -5,7 +5,7 @@ class LocationsController < ApplicationController
     end
 
     def create
-        location = Location.create(location_params)
+        location = Location.create!(location_params)
         rander json: location, status: :created
     end
 
@@ -16,13 +16,13 @@ class LocationsController < ApplicationController
 
     def update
         location = Location.find(params[:id])
-        location.update(location_params)
+        location.update!(location_params)
         render json: location, status: :accepted
     end 
 
     def destroy
         location = Location.find(params[:id])
-        location.destroy
+        location.destroy!
         head :no_content, status: :gone
     end
 
