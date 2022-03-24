@@ -23,7 +23,7 @@ class LocationsController < ApplicationController
     def destroy
         location = Location.find(params[:id])
         location.destroy!
-        head :no_content, status: :gone
+        render json: {}, status: :gone
     end
 
     private

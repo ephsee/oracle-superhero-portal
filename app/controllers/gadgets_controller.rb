@@ -5,7 +5,7 @@ class GadgetsController < ApplicationController
     end
 
     def create
-        gadget = Gadget.create(gadget_params)
+        gadget = Gadget.create!(gadget_params)
         render json: gadget, status: :created
     end
 
@@ -16,14 +16,14 @@ class GadgetsController < ApplicationController
 
     def update
         gadget = Gadget.find(params[:id])
-        gadget.update(gadget_params)
+        gadget.update!(gadget_params)
         render json: gadget, status: :accepted
     end 
 
     def destroy
         gadget = Gadget.find(params[:id])
-        gadget.destroy
-        head :no_content, status: :gone
+        gadget.destroy!
+        render json: {}, status: :gone
     end
 
     private

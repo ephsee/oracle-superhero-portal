@@ -21,9 +21,9 @@ class HerosController < ApplicationController
     end 
 
     def destroy
-        hero = Hero.find(params[:id])
+        hero = Hero.find_by(id: params[:id])
         hero.destroy!
-        head :no_content, status: :gone
+        render json: {}, status: :gone
     end
 
     private

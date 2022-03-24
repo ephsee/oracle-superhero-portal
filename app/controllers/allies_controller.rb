@@ -23,7 +23,7 @@ class AlliesController < ApplicationController
     def destroy
         ally = Ally.find(params[:id])
         ally.destroy!
-        head :no_content, status: :gone
+        render json: {}, status: :gone
     end
 
     private

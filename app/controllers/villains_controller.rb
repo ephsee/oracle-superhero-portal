@@ -23,7 +23,7 @@ class VillainsController < ApplicationController
     def destroy
         villain = Villain.find(params[:id])
         villain.destroy!
-        head :no_content, status: :gone
+        render json: {}, status: :gone
     end
 
     private
