@@ -1,0 +1,2 @@
+class AlliesController < ApplicationController
+end
