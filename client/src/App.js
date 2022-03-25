@@ -3,10 +3,26 @@ import React, {useState, useEffect} from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Home from './components/Home'
-import Hero from './components/Hero'
-import Logout from './components/Logout'
+import Start from './components/Start'
 
 function App() {
+
+  const [heros, setHeros] = useState([])
+
+    useEffect(()=>{
+        fetch("/heros")
+        .then(r => r.json())
+        .then(setHeros)
+    }, [])
+
+    const [showHero, setShowHero] = useState([])
+
+    useEffect(()=>{
+        fetch("/authorized_hero")
+        .then(r => r.json())
+        .then(setShowHero)
+    }, [])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,17 +31,14 @@ function App() {
 
         <main>
         <Switch>
+          <Route path="/authorized_hero">
+            <Home hero={showHero}/>
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/heros">
-            <Home />
-          </Route>
-          <Route path="/authorized_hero">
-            <Hero />
-          </Route>
-          <Route path="/logout">
-            <Logout />
+          <Route path="/">
+            <Start heros={heros}/>
           </Route>
         </Switch>
         </main>

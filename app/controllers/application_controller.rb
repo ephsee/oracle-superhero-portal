@@ -14,8 +14,6 @@ class ApplicationController < ActionController::API
     return render json: { errors: "Hero Not Authorized" }, status: :unauthorized unless authorized_hero
   end
 
-
-
   private
 
   def not_found(error)

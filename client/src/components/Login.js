@@ -1,6 +1,5 @@
-import {useEffect, useState} from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom'
-import Hero from './Hero'
+import {useState} from 'react'
+// import { Switch, Route, useHistory } from 'react-router-dom'
 
 function Login() {
 
@@ -10,64 +9,41 @@ function Login() {
   //     history.push('/authorized_user')
   // }
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
-  console.log(username);
-  console.log(password);
-
-  // function signin(e) {
-  //   e.preventDefault();
-
-  //   fetch("/login", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       username: username,
-  //       password: password
-  //     })
-  //   }
-  //   .then(r => r.json())
-  //   .then(console.log)
-  //   )
-  //   // heroPage()
-  // }
-
-  // const [username, setUsername] = useState('')
-  // const [password, setPassword] = useState('')
+  console.log(username)
+  console.log(password)
  
-  const [error, setError] = useState([])
-  let history = useHistory();
+  // const [error, setError] = useState([])
 
   function signin(e){
       e.preventDefault()
-      const user = {
+      const hero = {
           username: username,
-          password
+          password: password
       }
      
-      fetch(`/login`,{
+      fetch("/login",{
         method:'POST',
         headers:{'Content-Type': 'application/json'},
-        body:JSON.stringify(user)
+        body:JSON.stringify(hero)
       })
       .then(res => {
         if(res.ok){
           res.json()
-          .then(user=>{
+          .then(hero=>{
             // setUser(user)
             // setIsAuthenticated(true)
-          })
+          console.log(hero)})
           
-        } else {
-          res.json()
-          .then(json => setError(json.error))
         }
+        // else {
+        //   res.json()
+        //   .then(json => setError(json.error))
+        // }
       })
   }
-
 
     return (
       <div className="Initial">
