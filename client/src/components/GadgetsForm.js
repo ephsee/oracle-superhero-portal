@@ -5,11 +5,11 @@ function GadgetForm() {
         <div>
             <form>
                 <p>Image of Gadget</p>
-                <input type="text" name="Villain Image" placeholder="enter url for image here"/>
+                <input type="text" name="Gadget Image" placeholder="Enter URL for image here"/>
                 <p>Gadget Name</p>
-                <p><input type="text" name="Villain Name" placeholder="Enter Villain Name"/></p>
+                <p><input type="text" name="Gadget Name" placeholder="Enter Gadget Name"/></p>
                 <p>Gadget Quantity</p>
-                <p><input type="text" name="Villain Alter-Ego" placeholder="Enter Villain's AlterEgo"/></p>
+                <p><input type="text" name="Gadget Quantity" placeholder="Enter Gadget Quantity"/></p>
             </form>
         </div>
       </div>
