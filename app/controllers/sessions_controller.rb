@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :authorized_hero, only: [:login]
+    skip_before_action :authorized_hero, only: [:login, :logout]
 
     def login
         hero = Hero.find_by(name: params[:username])

@@ -1,5 +1,7 @@
 class AlliesController < ApplicationController
 
+    skip_before_action :authorized_hero, only: [:index, :show, :create, :update, :destroy]
+
     def index
         render json: Ally.all, status: :ok
     end

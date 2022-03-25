@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
 
+    skip_before_action :authorized_hero, only: [:index, :show, :create, :update, :destroy]
+
     def index
         render json: Location.all, status: :ok
     end
