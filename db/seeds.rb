@@ -31,3 +31,23 @@ Villain.create(name: 'Cheetah', alter_ego: 'Barbara Ann Minerva', at_large: true
 Villain.create(name: 'Maxwell Lord', alter_ego: 'N/A', at_large: true, most_wanted: rand(1..10), notes:"bad or real bad", image:"pic goes here", hero_id: wonderWoman.id, location_id: dc.id )
 Villain.create(name: 'Giganta', alter_ego: 'Doris Zuell', at_large: false, most_wanted: rand(1..10), notes:"bad or real bad", image:"pic goes here", hero_id: wonderWoman.id, location_id: dc.id )
 Villain.create(name: 'Queen of Fables', alter_ego: 'Tsarita', at_large: true, most_wanted: rand(1..10), notes:"Brutal", image:"pic goes here", hero_id: wonderWoman.id, location_id: dc.id )
+
+puts 'seeding gadgets...'
+# Batman
+Gadget.create(item_name: 'Forensics Kit', quantity: 1, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Batarang', quantity: 15, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Grappling Gun', quantity: 1, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Smoke Capsules', quantity: 20, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'First Aid Kit', quantity: 1, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Tear Gas Pellets', quantity: 15, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Laser Torch', quantity: 1, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Handcuffs', quantity: 5, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Rebreather', quantity: 1, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Trackers', quantity: 6, image: 'pic goes here', hero_id: batman.id)
+Gadget.create(item_name: 'Taser', quantity: 1, image: 'pic goes here', hero_id: batman.id)
+# Superman
+Gadget.create(item_name: 'These Hands', quantity: 2, image: 'pic goes here', hero_id: superman.id)
+# Wonder Woman
+Gadget.create(item_name: 'Lasso of Truth', quantity: 1, image: 'pic goes here', hero_id: wonderWoman.id)
+Gadget.create(item_name: 'Bracelets of Submission', quantity: 2, image: 'pic goes here', hero_id: wonderWoman.id)
+Gadget.create(item_name: 'Sword of Athena', quantity: 1, image: 'pic goes here', hero_id: wonderWoman.id)
