@@ -5,6 +5,7 @@ class CreateHeros < ActiveRecord::Migration[6.1]
       t.string :alter_ego
       t.string :base
       t.string :image
+      t.string :password_digest
 
       t.timestamps
     end

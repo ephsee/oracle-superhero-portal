@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_03_24_164517) do
     t.string "alter_ego"
     t.string "base"
     t.string "image"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -6,9 +6,9 @@ dc = Location.create(name: 'Washington D.C.', image:"pic goes here")
 apokolypse = Location.create(name: 'Apokolypse', image:"pic goes here")
 puts 'seeding heroes...'
 # Heroes
-batman = Hero.create(name: "Batman", alter_ego: "Bruce Wayne", base: gotham.name, image: "pic goes here")
-superman = Hero.create(name: "Superman", alter_ego: "Clark Kent", base: metropolis.name, image: "pic goes here")
-wonderWoman = Hero.create(name: "Wonder Woman", alter_ego: "Diana of Themyscira", base: dc.name, image: "pic goes here")
+batman = Hero.create(name: "Batman", alter_ego: "Bruce Wayne", base: gotham.name, image: "pic goes here", password: "vengeance")
+superman = Hero.create(name: "Superman", alter_ego: "Clark Kent", base: metropolis.name, image: "pic goes here", password: "cryptonight")
+wonderWoman = Hero.create(name: "Wonder Woman", alter_ego: "Diana of Themyscira", base: dc.name, image: "pic goes here", password: "lasso")
 
 puts 'seeding villains'
 # Villains

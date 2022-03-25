@@ -12,8 +12,11 @@ class HerosController < ApplicationController
     end
 
     def show
-        hero = Hero.find(params[:id])
-        render json: hero, status: :ok
+        if active_hero
+            render json: active_hero, status: :ok
+        else
+            render json: "No Active Heros", status: :unauthorized
+        end
     end
 
     def update
@@ -31,7 +34,7 @@ class HerosController < ApplicationController
     private
 
     def hero_params
-        params.permit(:name, :alter_ego, :base, :image)
+        params.permit(:name, :alter_ego, :base, :image, :password)
     end
 
 end
