@@ -1,4 +1,4 @@
 class LocationSerializer < ActiveModel::Serializer
   attributes :id, :name
-  has_one :villain
+  has_many :villains
 end
