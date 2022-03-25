@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_24_164515) do
+ActiveRecord::Schema.define(version: 2022_03_24_164517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,10 +47,8 @@ ActiveRecord::Schema.define(version: 2022_03_24_164515) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.bigint "villain_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["villain_id"], name: "index_locations_on_villain_id"
   end
 
   create_table "villains", force: :cascade do |t|
@@ -58,15 +56,17 @@ ActiveRecord::Schema.define(version: 2022_03_24_164515) do
     t.string "alter_ego"
     t.boolean "at_large"
     t.integer "most_wanted"
-    t.string "alignment"
+    t.string "notes"
     t.string "image"
     t.bigint "hero_id", null: false
+    t.bigint "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["hero_id"], name: "index_villains_on_hero_id"
+    t.index ["location_id"], name: "index_villains_on_location_id"
   end
 
   add_foreign_key "gadgets", "heros"
-  add_foreign_key "locations", "villains"
   add_foreign_key "villains", "heros"
+  add_foreign_key "villains", "locations"
 end

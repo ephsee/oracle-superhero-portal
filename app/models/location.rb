@@ -1,5 +1,6 @@
 class Location < ApplicationRecord
 
-    belongs_to :villain
+    has_many :villains
+    has_many :heros, through: :villains
 
 end
