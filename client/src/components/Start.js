@@ -6,7 +6,11 @@ function Start ({heros}) {
 
     return (
 
-        <div>        
+        <div>
+
+                <div><h1>Welcome to ORACLE</h1></div>
+                
+                <button>Login</button> 
             
                 {showHeros}
             

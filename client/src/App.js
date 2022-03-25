@@ -23,16 +23,18 @@ function App() {
         .then(setShowHero)
     }, [])
 
+    console.log(showHero)
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-
-        <div><h1>Welcome to ORACLE</h1></div>       
+      <header className="App-header">       
 
         <main>
         <Switch>
           <Route path="/authorized_hero">
-            <Home hero={showHero}/>
+            <Home hero={showHero} logout={setShowHero}/>
           </Route>
           <Route path="/login">
             <Login />

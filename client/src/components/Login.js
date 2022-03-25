@@ -47,7 +47,7 @@ function Login() {
 
     return (
       <div className="Initial">
-        Welcome to Oracle
+        Login for Access to Top Secret Data
         <form>
         <input type="text"
           id="username"
