@@ -6,10 +6,9 @@ export default function ShowStuff() {
 
 
     useEffect( () => {
-    fetch("/heros")
-    .then(r => r.json())
-    .then(setHeros)
-
+        fetch("/villains")
+        .then(r => r.json())
+        .then(setHeros)
     }, [] )
 
     const showHeros = heros.map( h => <h3 key={h.id}>{h.name}</h3> )
