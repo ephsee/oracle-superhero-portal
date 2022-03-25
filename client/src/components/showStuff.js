@@ -1,20 +1,23 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 export default function ShowStuff() {
 
+    const [heros, setHeros] = useState([])
 
-    useEffect(()=>{
 
-        
+    useEffect( () => {
     fetch("/heros")
     .then(r => r.json())
-    .then(console.log)
+    .then(setHeros)
 
-    },[])
+    }, [] )
+
+    const showHeros = heros.map( h => <h3 key={h.id}>{h.name}</h3> )
 
     return (
-        <div></div>
+        <div>
+            {showHeros}
+        </div>
     )
-
     
 }

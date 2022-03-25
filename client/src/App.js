@@ -6,9 +6,9 @@ function App() {
     <div className="App">
       <header className="App-header">
 
+        <div><h1>Welcome to ORACLE</h1></div>
+
         <ShowStuff></ShowStuff>
-        
-        <div>Welcome to ORACLE</div>
         
       </header>
     </div>
