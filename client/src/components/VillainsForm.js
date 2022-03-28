@@ -6,7 +6,7 @@ function VillainForm({hero, villains, handleVillains}) {
     const [alterEgo, setAlterEgo] = useState("")
     const [image, setImage] = useState("")
     const [threat, setThreat] = useState("")
-    const [atLarge, setAtLarge] = useState(false)
+    const [atLarge, setAtLarge] = useState('true')
     const [notes, setNotes] = useState("")
     const [id, setId] = useState("")
 
@@ -22,10 +22,16 @@ function VillainForm({hero, villains, handleVillains}) {
         setImage(e.target.value)
         console.log(image)
     }
-    function handleAtLarge(e){
-        setAtLarge(!e.target.value)
-        console.log(atLarge)
+    // function handleAtLarge(e){
+    //     setAtLarge(!e.target.value)
+    //     console.log(atLarge)
+    const handleALTrue = () =>{
+        setAtLarge('true')
     }
+    const handleALFalse = ()=>{
+        setAtLarge('false')
+    }
+    
     function handleThreat(e){
         setThreat(e.target.value)
         console.log(threat)
@@ -81,22 +87,22 @@ function VillainForm({hero, villains, handleVillains}) {
                 <input onChange={handleThreat} type="number" name="Threat Level" placeholder="Enter Threat Level"/>
                 <div>
                     <p>Currently At Large?</p>
-                    <input
-                        onChange={handleAtLarge}
-                        id="True"
-                        name="True"
-                        type="radio"
-                        value="True"    
-                    />
-                    <label for="True">True</label>
-                    <input
-                        onChange={handleAtLarge}
-                        id="False"
-                        name="False"
-                        type="radio"
-                        value="False"    
-                    />
-                    <label for="False">False</label>
+                    <label>
+                        <input
+                            type="radio"
+                            value={atLarge === "true"}
+                            onChange={handleALTrue}
+                        />
+                        True
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            value={atLarge === 'false'}
+                            onChange={handleALFalse}
+                        />
+                        False
+                    </label>
                 </div>
                 <p>Notes:</p>
                 <textarea onChange={handleNotes} type="text" name="notes" placeholder="Enter Notes"/>
@@ -106,6 +112,6 @@ function VillainForm({hero, villains, handleVillains}) {
       </div>
       
     );
-  }
+  };
   
   export default VillainForm;
