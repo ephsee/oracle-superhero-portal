@@ -17,12 +17,15 @@ ActiveRecord::Schema.define(version: 2022_03_24_164517) do
 
   create_table "allies", force: :cascade do |t|
     t.string "name"
-    t.string "affiliation"
+    t.string "alter_ego"
+    t.string "city"
     t.string "image"
     t.bigint "hero_id"
+    t.bigint "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["hero_id"], name: "index_allies_on_hero_id"
+    t.index ["location_id"], name: "index_allies_on_location_id"
   end
 
   create_table "gadgets", force: :cascade do |t|

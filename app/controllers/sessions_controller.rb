@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     def logout
         session.delete :active_hero
-        head :no_content
+        render json: {}, status: :gone
     end
 
 end

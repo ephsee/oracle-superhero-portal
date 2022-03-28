@@ -1,8 +1,13 @@
 // import {useEffect, useState} from 'react'
+// import {useHistory} from 'react-router-dom'
 
-function Start ({heros}) {
+function Start () {
 
-    const showHeros = heros.map( h => <div key={h.id}><img src={h.image} alt="look at me"/><h3>{h.name}</h3></div> )
+    // let history = useHistory()
+
+    // function loginPage(){
+    //     history.push("/login")
+    // }
 
     return (
 
@@ -10,9 +15,8 @@ function Start ({heros}) {
 
                 <div><h1>Welcome to ORACLE</h1></div>
                 
-                <button>Login</button> 
-            
-                {showHeros}
+                <button>Login</button>
+                {/* onClick={loginPage} */}
             
         </div>
     )

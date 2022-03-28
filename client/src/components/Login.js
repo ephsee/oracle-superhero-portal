@@ -3,10 +3,10 @@ import {useState} from 'react'
 
 function Login() {
 
-  // const history = useHistory()
+  // let history = useHistory()
 
   // function heroPage(){
-  //     history.push('/authorized_user')
+      // history.push("/authorized_hero")
   // }
 
   const [username, setUsername] = useState('')
@@ -45,9 +45,13 @@ function Login() {
       })
   }
 
+  // redirect to authorized_hero
+
     return (
       <div className="Initial">
         Login for Access to Top Secret Data
+
+        {/* <button>heropage</button> */}
         <form>
         <input type="text"
           id="username"

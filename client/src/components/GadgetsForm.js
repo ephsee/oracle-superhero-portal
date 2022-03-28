@@ -1,4 +1,7 @@
 function GadgetForm() {
+
+    // when creating set hero_id to current authorized hero.id
+
     return (
       <div> 
         <h3>Add New Gadget</h3>
