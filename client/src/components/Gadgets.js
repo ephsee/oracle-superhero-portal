@@ -1,13 +1,12 @@
 import {NavLink} from 'react-router-dom'
-import {useState, useEffect} from 'react'
+// import {useState, useEffect} from 'react'
 import GadgetsForm from './GadgetsForm'
+import GadgetCard from './GadgetCard'
 
-function Gadgets({hero, gadgets, handleGadgets}) {
-
-    const heroGadgets = gadgets.filter( g => g.hero_id === hero.id).map( gad => <div key={gad.id}><p>NAME: {gad.item_name} QUANTITY: {gad.quantity}</p></div> )
-
-    return (
-      <div className="Initial">
+function Gadgets({hero, gadgets, handleGadgets}) {       
+          
+          return (
+            <div className="Initial">
 
         <div>
           <NavLink
@@ -21,22 +20,17 @@ function Gadgets({hero, gadgets, handleGadgets}) {
           </NavLink>
 
           <NavLink
-            to="/gadgets">
-            Gadgets
-          </NavLink>
-
-          <NavLink
             to="/villains">
             Villains
           </NavLink>
         </div>
 
         Your tools :
-        {heroGadgets}
+        <GadgetCard hero={hero} gadgets={gadgets} handleGadget={handleGadgets} />
 
         <hr></hr>
         
-        Add To Your Arsenal
+        Add To Your Arsenal:
         <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={handleGadgets}/>
 
       </div>

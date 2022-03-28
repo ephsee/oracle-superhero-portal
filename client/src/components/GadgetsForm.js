@@ -36,7 +36,8 @@ function GadgetForm({hero, gadgets, handleGadgets}) {
               body:JSON.stringify(gadget)
             })
             .then(r => r.json())
-            .then(handleGadgets(gadget, ...gadgets))
+            .then(console.log)
+            // .then(handleGadgets(gadget, ...gadgets))
             alert('new item created')
     }
 

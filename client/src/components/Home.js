@@ -37,16 +37,18 @@ function Home({hero, logout}) {
             to="/villains">
             Villains
           </NavLink>
-        </div>
 
-      {hero === {} ? <button to="/login">LOGIN</button> : <button onClick={(e) => signout(e)}>LOGOUT</button>}
+          <NavLink
+            to="/"
+            onClick={(e) => signout(e)}
+            >
+            Logout
+          </NavLink>
+        </div>
 
       <div> 
         <h2>Happy Hunting {hero.name}</h2>
         <img src={hero.image} alt={hero.name}/>
-        {/* <div><button> Allies </button></div>
-        <div><button> Gadgets </button></div>
-        <div><button> Villains </button></div> */}
       </div>
 
       </>

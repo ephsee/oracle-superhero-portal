@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState, useEffect} from 'react'
-import { Switch, Route} from 'react-router-dom'
-import Login from './components/Login'
+import {Switch, Route} from 'react-router-dom'
+// import Login from './components/Login'
 import Home from './components/Home'
 import Start from './components/Start'
 import Allies from './components/Allies'
@@ -44,13 +44,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">       
+      <header className="App-header">    
 
         <main>
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
           <Route exact path="/authorized_hero">
             <Home hero={showHero} logout={setShowHero}/>
           </Route>
