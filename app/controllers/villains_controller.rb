@@ -31,7 +31,7 @@ class VillainsController < ApplicationController
     private
 
     def villain_params
-        params.permit(:id, :name, :alter_ego, :at_large, :alignment, :image, :most_wanted, :hero_id)
+        params.permit(:id, :name, :alter_ego, :at_large, :notes, :image, :most_wanted, :hero_id, :location_id)
     end
 
 end

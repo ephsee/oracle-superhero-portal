@@ -1,9 +1,10 @@
 import {NavLink} from 'react-router-dom'
+// import {useState} from 'react'
 import VillainsForm from './VillainsForm'
 
 function Villains({hero}) {
 
-    const villains = hero.villains.map( v => <div key={v.id}><p>{v.name}</p></div>)
+    const villains = hero.villains.map( v => <div key={v.id}><p>NAME: {v.name} ~ ID: {v.id}</p></div>)
 
     return (
       <div className="Initial">
@@ -31,12 +32,11 @@ function Villains({hero}) {
         </div>
 
         Persons of Interest :
-        {villains}
+        {villains} id: {villains.id}
 
         <hr></hr>
 
-        Add to your Most Wanted :
-        <VillainsForm />
+        <VillainsForm hero={hero}/>
 
       </div>
     );

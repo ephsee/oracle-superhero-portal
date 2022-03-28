@@ -22,7 +22,9 @@ function GadgetForm({hero}) {
     // when creating set hero_id to current authorized hero.id
     // console.log("from gadgets form: ", hero.id)
 
-    function newGadget() {
+    function newGadget(e) {
+
+      e.preventDefault()
      
       const gadget = {
         item_name: itemName,
@@ -38,6 +40,7 @@ function GadgetForm({hero}) {
             })
             .then(r => r.json())
             .then(console.log)
+            // .then(setGadgets(...gadgets, gadget))
     }
 
     return (
@@ -46,12 +49,12 @@ function GadgetForm({hero}) {
         <div>
             <form>
                 <p>Image of Gadget</p>
-                <input onChange={(e) => handleImage(e)} type="text" name="Gadget Image" placeholder="Enter URL for image here"/>
+                <input onChange={handleImage} type="text" name="Gadget Image" placeholder="Enter URL for image here"/>
                 <p>Gadget Name</p>
-                <p><input onChange={(e) => handleItem(e)} type="text" name="Gadget Name" placeholder="Enter Gadget Name"/></p>
+                <p><input onChange={handleItem} type="text" name="Gadget Name" placeholder="Enter Gadget Name"/></p>
                 <p>Gadget Quantity</p>
-                <p><input onChange={(e) => handleQuantity(e)} type="number" name="Gadget Quantity" placeholder="Enter Gadget Quantity"/></p>
-                <input onSubmit={newGadget} type="submit" value="Submit"></input>
+                <p><input onChange={handleQuantity} type="number" name="Gadget Quantity" placeholder="Enter Gadget Quantity"/></p>
+                <input onClick={newGadget} type="submit" value="Submit"></input>
             </form>
         </div>
       </div>
