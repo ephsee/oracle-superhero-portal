@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function GadgetForm({hero}) {
+function GadgetForm({hero, gadgets, handleGadgets}) {
 
     const [itemName, setItemName] = useState("")
     const [quantity, setQuantity] = useState("")
@@ -19,9 +19,6 @@ function GadgetForm({hero}) {
       console.log(image)
     }
 
-    // when creating set hero_id to current authorized hero.id
-    // console.log("from gadgets form: ", hero.id)
-
     function newGadget(e) {
 
       e.preventDefault()
@@ -39,14 +36,12 @@ function GadgetForm({hero}) {
               body:JSON.stringify(gadget)
             })
             .then(r => r.json())
-            .then(console.log)
-            // .then(setGadgets(...gadgets, gadget))
+            .then(handleGadgets(gadget, ...gadgets))
+            alert('new item created')
     }
 
     return (
       <div> 
-        <h3>Add New Gadget</h3>
-        <div>
             <form>
                 <p>Image of Gadget</p>
                 <input onChange={handleImage} type="text" name="Gadget Image" placeholder="Enter URL for image here"/>
@@ -56,7 +51,6 @@ function GadgetForm({hero}) {
                 <p><input onChange={handleQuantity} type="number" name="Gadget Quantity" placeholder="Enter Gadget Quantity"/></p>
                 <input onClick={newGadget} type="submit" value="Submit"></input>
             </form>
-        </div>
       </div>
       
     );

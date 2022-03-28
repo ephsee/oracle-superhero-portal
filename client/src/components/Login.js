@@ -32,7 +32,7 @@ function Login() {
           .then(hero=>{
             // setUser(user)
             // setIsAuthenticated(true)
-          console.log(hero)})
+          alert(`${hero.name} has been authorized`)})
           
         }
         // else {
@@ -50,13 +50,13 @@ function Login() {
         Login for Access to Top Secret Data
 
         <form>
-        <input type="text"
+        <input type="username"
           id="username"
           value={username}
           placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
         />
-        <input type="text"
+        <input type="password"
           id="password"
           value={password}
           placeholder="password"

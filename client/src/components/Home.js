@@ -1,17 +1,7 @@
 // import {useEffect, useState} from 'react'
 import {NavLink} from 'react-router-dom'
 
-// build out routes for allies, gadgets and villains
-
 function Home({hero, logout}) {
-
-  // const [allies, setAllies] = useState([])
-  // const [gadgets, setGadgets] = useState([])
-  // const [villains, setVillains] = useState([])
-
-  // console.log(gadgets)
-
-  console.log(hero)
 
   function signout(e) {
 
@@ -19,6 +9,7 @@ function Home({hero, logout}) {
       method: 'DELETE'})
       .then(r=>r.json())
       .then(logout)
+      alert("log out complete - data secured")
     }
 
     // redirect to start page
@@ -48,7 +39,7 @@ function Home({hero, logout}) {
           </NavLink>
         </div>
 
-      <button onClick={(e) => signout(e)}>LOGOUT</button>
+      {hero === {} ? <button to="/login">LOGIN</button> : <button onClick={(e) => signout(e)}>LOGOUT</button>}
 
       <div> 
         <h2>Happy Hunting {hero.name}</h2>

@@ -18,7 +18,29 @@ function App() {
       .then(setShowHero)
   }, [])
 
-  console.log(showHero)
+  const [villains, setVillains] = useState([])
+
+  useEffect(()=>{
+    fetch('/villains')
+    .then(r=>r.json())
+    .then(setVillains)
+  },[])
+
+  const [gadgets, setGadgets] = useState([])
+
+  useEffect(()=>{
+    fetch('/gadgets')
+    .then(r=>r.json())
+    .then(setGadgets)
+  },[])
+
+  const [allies, setAllies] = useState([])
+
+  useEffect(()=>{
+    fetch("/allies")
+    .then(r=> r.json())
+    .then(setAllies)
+  }, [])
 
   return (
     <div className="App">
@@ -33,13 +55,13 @@ function App() {
             <Home hero={showHero} logout={setShowHero}/>
           </Route>
           <Route path="/allies">
-            <Allies hero={showHero}/>
+            <Allies hero={showHero} allies={allies} handleAllies={setAllies}/>
           </Route>
           <Route path="/gadgets">
-            <Gadgets hero={showHero}/>
+            <Gadgets hero={showHero} gadgets={gadgets} handleGadgets={setGadgets}/>
           </Route>
           <Route path="/villains">
-            <Villains hero={showHero}/>
+            <Villains hero={showHero} villains={villains} handleVillains={setVillains}/>
           </Route>
           <Route exact path="/">
             <Start />

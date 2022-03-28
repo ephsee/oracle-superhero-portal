@@ -1,8 +1,12 @@
 import {NavLink} from 'react-router-dom'
+import {useEffect, useState} from 'react'
 
-function Allies({hero}) {
+function Allies({hero, allies, handleAllies}) {
 
-    const allies = hero.allies.map( a => <div key={a.id}><h2>{a.name}</h2></div>)
+    console.log(allies)
+
+
+    const heroAllies = allies.filter( a => a.hero_id === hero.id).map( ally => <div key={ally.id}>{ally.name} ~ {ally.alter_ego}</div>)
 
     return(
 
@@ -30,9 +34,10 @@ function Allies({hero}) {
           </NavLink>
         </div>
 
-            ALLIES OF AUTHORIZED HERO
+            Trusted Allies for: {hero.name}
+            <hr></hr>
 
-            {allies}
+            {heroAllies}
 
         </div>
     )

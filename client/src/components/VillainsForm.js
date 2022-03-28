@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function VillainForm({hero}) {
+function VillainForm({hero, villains, handleVillains}) {
 
     const [name, setName] = useState("")
     const [alterEgo, setAlterEgo] = useState("")
@@ -12,15 +12,15 @@ function VillainForm({hero}) {
 
     function handleName(e){
         setName(e.target.value)
-      console.log()
+        console.log(name)
     }
     function handleAlterEgo(e){
         setAlterEgo(e.target.value)
-      console.log(alterEgo)
+        console.log(alterEgo)
     }
     function handleImage(e){
         setImage(e.target.value)
-      console.log(image)
+        console.log(image)
     }
     function handleAtLarge(e){
         setAtLarge(!e.target.value)
@@ -60,11 +60,9 @@ function VillainForm({hero}) {
                   body:JSON.stringify(update)
                 })
                 .then(r => r.json())
-                .then(console.log)
-                // .then(setGadgets(...gadgets, gadget))
+                .then(handleVillains(update, ...villains))
+                alert('villain details updated')
         }
-
-    // when creating set hero_id to current authorized hero.id
 
     return (
       <div> 
