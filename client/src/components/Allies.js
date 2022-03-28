@@ -1,12 +1,15 @@
 import {NavLink} from 'react-router-dom'
-import GadgetsForm from './GadgetsForm'
 
-function Gadgets({hero}) {
+function Allies({hero}) {
 
-    const gadgets = hero.gadgets.map( g => <div key={g.id}>{g.item_name} {g.quantity}</div>)
+    // console.log(hero.allies)
 
-    return (
-      <div className="Initial">
+    const allies = hero.allies.map( a => <div key={a.id}><h2>{a.name}</h2></div>)
+
+
+    return(
+
+        <div>
 
         <div>
           <NavLink
@@ -30,16 +33,12 @@ function Gadgets({hero}) {
           </NavLink>
         </div>
 
-        Your tools :
-        {gadgets}
+            ALLIES OF AUTHORIZED HERO
 
-        <hr></hr>
-        
-        Add To Your Arsenal
-        <GadgetsForm />
+            {allies}
 
-      </div>
-    );
-  }
-  
-  export default Gadgets;
+        </div>
+    )
+}
+
+export default Allies
