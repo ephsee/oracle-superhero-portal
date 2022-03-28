@@ -11,7 +11,7 @@ superman = Hero.create(name: "Superman", alter_ego: "Clark Kent", base: "The For
 wonderWoman = Hero.create(name: "Wonder Woman", alter_ego: "Diana of Themyscira", base: "Themyscira", image: "pic goes here", password: "lasso")
 
 puts 'seeding villains'
-# Villains
+# Batman
 Villain.create(name: 'Joker', alter_ego: 'Unknown', at_large: true, most_wanted: rand(1..10), notes:"Insane", image:"pic goes here", hero_id: batman.id, location_id: gotham.id )
 Villain.create(name: 'Catwoman', alter_ego: 'Selina Kyle', at_large: true, most_wanted: rand(1..10), notes:"A Cat", image:"pic goes here", hero_id: batman.id, location_id: gotham.id )
 Villain.create(name: 'Killer Moth', alter_ego: 'Drury Walker', at_large: false, most_wanted: rand(1..10), notes:"bad or real bad", image:"pic goes here", hero_id: batman.id, location_id: gotham.id )
@@ -19,7 +19,6 @@ Villain.create(name: 'Carmine Falcone', alter_ego: 'N/A', at_large: false, most_
 Villain.create(name: 'Penguin', alter_ego: 'Oswald Cobblepot', at_large: true, most_wanted: rand(1..10), notes:"LA RATA ALADA!!!", image:"pic goes here", hero_id: batman.id, location_id: gotham.id )
 Villain.create(name: 'Red Hood', alter_ego: 'Jason Todd', at_large: true, most_wanted: rand(1..10), notes:"bad or real bad", image:"pic goes here", hero_id: batman.id, location_id: gotham.id )
 Villain.create(name: 'Salvatore Maroni', alter_ego: 'N/A', at_large: false, most_wanted: rand(1..10), notes:"bad or real bad", image:"pic goes here", hero_id: batman.id, location_id: gotham.id )
-
 # Superman
 Villain.create(name: 'Lex Luthor', alter_ego: 'N/A', at_large: true, most_wanted: rand(1..10), notes:"bad or real bad", image:"pic goes here", hero_id: superman.id, location_id: metropolis.id )
 Villain.create(name: 'Toyman', alter_ego: 'Winslow Scott', at_large: false, most_wanted: rand(1..10), notes:"bad or real bad", image:"pic goes here", hero_id: superman.id, location_id: metropolis.id )
