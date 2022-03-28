@@ -36,7 +36,7 @@ function Gadgets({hero}) {
         <hr></hr>
         
         Add To Your Arsenal
-        <GadgetsForm />
+        <GadgetsForm hero={hero}/>
 
       </div>
     );

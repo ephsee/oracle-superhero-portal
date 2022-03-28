@@ -2,10 +2,7 @@ import {NavLink} from 'react-router-dom'
 
 function Allies({hero}) {
 
-    // console.log(hero.allies)
-
     const allies = hero.allies.map( a => <div key={a.id}><h2>{a.name}</h2></div>)
-
 
     return(
 

@@ -1,24 +1,21 @@
 import {useState} from 'react'
-// import { Switch, Route, useHistory } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 function Login() {
-
-  // let history = useHistory()
-
-  // function heroPage(){
-      // history.push("/authorized_hero")
-  // }
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const [user, setUser] = useState(null);
+
   console.log(username)
   console.log(password)
  
-  // const [error, setError] = useState([])
+  // const [error, setError] = useState(false)
 
   function signin(e){
-      e.preventDefault()
+      // e.preventDefault()
       const hero = {
           username: username,
           password: password
@@ -46,12 +43,12 @@ function Login() {
   }
 
   // redirect to authorized_hero
+  // if (!isAuthenticated) return <Login error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
     return (
       <div className="Initial">
         Login for Access to Top Secret Data
 
-        {/* <button>heropage</button> */}
         <form>
         <input type="text"
           id="username"
@@ -67,6 +64,12 @@ function Login() {
         />
         <input onClick={signin} type="submit" value="Submit"></input>
         </form>
+        <div>
+            <NavLink
+                to="/authorized_hero">
+                Enter
+            </NavLink>
+        </div>
 
       </div>
     );

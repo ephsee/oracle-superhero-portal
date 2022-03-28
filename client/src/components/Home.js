@@ -13,8 +13,6 @@ function Home({hero, logout}) {
 
   console.log(hero)
 
-  // const villains = hero.villains.map((v) => <div><p>{v.name}</p><img src={v.image} alt={v.name}/></div> )
-
   function signout(e) {
 
     fetch("/logout", {
@@ -55,10 +53,9 @@ function Home({hero, logout}) {
       <div> 
         <h2>Happy Hunting {hero.name}</h2>
         <img src={hero.image} alt={hero.name}/>
-        {/* {villains} */}
-        <div><button> Allies </button></div>
+        {/* <div><button> Allies </button></div>
         <div><button> Gadgets </button></div>
-        <div><button> Villains </button></div>
+        <div><button> Villains </button></div> */}
       </div>
 
       </>

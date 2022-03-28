@@ -17,7 +17,7 @@ class HerosController < ApplicationController
         if active_hero
             render json: active_hero, status: :ok
         else
-            render json: "No Active Heros", status: :unauthorized
+            render json: {error: "No Active Heros"}, status: :unauthorized
         end
     end
 

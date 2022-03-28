@@ -4,8 +4,6 @@ import VillainsForm from './VillainsForm'
 function Villains({hero}) {
 
     const villains = hero.villains.map( v => <div key={v.id}><p>{v.name}</p></div>)
-  
-    // console.log(hero.villains)
 
     return (
       <div className="Initial">
