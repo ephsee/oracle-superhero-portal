@@ -22,15 +22,19 @@ function VillainForm({hero, villains, handleVillains}) {
         setImage(e.target.value)
         console.log(image)
     }
-    // function handleAtLarge(e){
-    //     setAtLarge(!e.target.value)
-    //     console.log(atLarge)
-    const handleALTrue = () =>{
-        setAtLarge('true')
+    function handleAtLarge(e){
+        setAtLarge(e.target.value)
+        console.log(atLarge)
     }
-    const handleALFalse = ()=>{
-        setAtLarge('false')
-    }
+    // const resetRadioState = ()=>{
+    //     setAtLarge('')
+    // }
+    // const handleALTrue = () =>{
+    //     setAtLarge(true)
+    // }
+    // const handleALFalse = () =>{
+    //     setAtLarge(false)
+    // }
     
     function handleThreat(e){
         setThreat(e.target.value)
@@ -85,25 +89,27 @@ function VillainForm({hero, villains, handleVillains}) {
                 <input onChange={handleAlterEgo} type="text" name="Villain Alter-Ego" placeholder="Enter Villain's AlterEgo"/>
                 <p>Threat Level</p>
                 <input onChange={handleThreat} type="number" name="Threat Level" placeholder="Enter Threat Level"/>
-                <div>
+                {/* <div> */}
                     <p>Currently At Large?</p>
                     <label>
                         <input
                             type="radio"
-                            value={atLarge === "true"}
-                            onChange={handleALTrue}
+                            value= 'true'
+                            onChange={handleAtLarge}
+                            checked={atLarge === 'true'}
                         />
                         True
                     </label>
                     <label>
                         <input
                             type="radio"
-                            value={atLarge === 'false'}
-                            onChange={handleALFalse}
+                            value='false'
+                            onChange={handleAtLarge}
+                            checked={atLarge === 'false'}
                         />
                         False
                     </label>
-                </div>
+                {/* </div> */}
                 <p>Notes:</p>
                 <textarea onChange={handleNotes} type="text" name="notes" placeholder="Enter Notes"/>
                 <input onClick={updateVillain} type="submit" value="Submit"></input>
