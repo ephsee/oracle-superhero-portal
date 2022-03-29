@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function VillainForm({hero, villains, handleVillains}) {
 
@@ -49,6 +49,14 @@ function VillainForm({hero, villains, handleVillains}) {
         console.log(id)
     }
 
+    function resetVillains(){
+        
+            fetch('/villains')
+            .then(r=>r.json())
+            .then(handleVillains)
+            
+    }
+
     function updateVillain(e) {
         e.preventDefault()
 
@@ -70,9 +78,17 @@ function VillainForm({hero, villains, handleVillains}) {
                   body:JSON.stringify(update)
                 })
                 .then(r => r.json())
-                .then(handleVillains(update, ...villains))
-                alert('villain details updated')
+                .then(resetVillains)
+                alert(`${update.name} details updated`)
         }
+
+        // <select name="Villains" id="villains">
+        // <option value="">Please Select</option>
+        // <option value="volvo">Volvo</option>
+        // <option value="saab">Saab</option>
+        // <option value="mercedes">Mercedes</option>
+        // <option value="audi">Audi</option>
+        // </select>
 
     return (
       <div> 

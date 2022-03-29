@@ -1,7 +1,7 @@
 import {NavLink} from 'react-router-dom'
 import {useState} from 'react'
 
-function Start () {
+function Start ({hero, login}) {
 
     function Login() {
 
@@ -28,20 +28,10 @@ function Start () {
               headers:{'Content-Type': 'application/json'},
               body:JSON.stringify(hero)
             })
-            .then(res => {
-              if(res.ok){
-                res.json()
-                .then(hero=>{
-                  // setUser(user)
-                  // setIsAuthenticated(true)
-                alert(`${hero.name} has been authorized`)})
-                
-              }
-              // else {
-              //   res.json()
-              //   .then(json => setError(json.error))
-              // }
-            })
+            .then( r => r.json())
+            .then(login)
+            
+            alert("AUTHORIZATION COMPLETE")
         }
       
         // redirect to authorized_hero

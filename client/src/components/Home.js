@@ -12,6 +12,8 @@ function Home({hero, logout}) {
       alert("log out complete - data secured")
     }
 
+    // ask to make sure you want to log out
+
     // redirect to start page
 
     return (

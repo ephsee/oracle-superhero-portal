@@ -1,12 +1,39 @@
 import {NavLink} from 'react-router-dom'
-// import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import GadgetsForm from './GadgetsForm'
 import GadgetCard from './GadgetCard'
 
-function Gadgets({hero, gadgets, handleGadgets}) {       
+function Gadgets({hero}) {       
           
-          return (
-            <div className="Initial">
+  const [gadgets, setGadgets] = useState([])
+
+    useEffect(()=>{
+      fetch('/gadgets')
+      .then(r=>r.json())
+      .then(setGadgets)
+    }, [])
+
+    function deleteGadget(id){
+      console.log(id)
+      fetch(`/gadgets/${id}`,{
+          method: 'DELETE'})
+      .then(r=>r.json())
+      // .then(console.log)
+      // .then(setGadgets([...gadgets]))
+      alert('item removed')
+      const gadgetsAfterDelete = gadgets.filter( gad => id !== gad.id)
+      setGadgets(gadgetsAfterDelete)
+  }
+
+    const [showForm, setShowForm] = useState(false)
+
+    function formHandler() {
+      setShowForm(!showForm)
+    }
+  
+        return (
+        
+        <div className="Initial">
 
         <div>
           <NavLink
@@ -26,13 +53,14 @@ function Gadgets({hero, gadgets, handleGadgets}) {
         </div>
 
         Your tools :
-        <GadgetCard hero={hero} gadgets={gadgets} handleGadget={handleGadgets} />
+        <GadgetCard hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
 
         <hr></hr>
         
-        Add To Your Arsenal:
-        <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={handleGadgets}/>
-
+        <button onClick={formHandler}>🔫add to your arsenal:</button>
+        <div>
+        {showForm ? <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={setGadgets}/> : null}
+        </div>
       </div>
     );
   }

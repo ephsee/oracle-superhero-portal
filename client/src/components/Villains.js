@@ -1,10 +1,24 @@
 import {NavLink} from 'react-router-dom'
-// import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import VillainsForm from './VillainsForm'
 
-function Villains({hero, villains, handleVillains}) {
+function Villains({hero}) {
+
+    const [villains, setVillains] = useState([])
+
+    useEffect(()=>{
+      fetch('/villains')
+      .then(r=>r.json())
+      .then(setVillains)
+    }, [])
 
     const heroVillains = villains.filter( v => v.hero_id === hero.id).map( v => <div key={v.id}><p>NAME: {v.name} ~ ID: {v.id}</p></div> )
+
+    const [showForm, setShowForm] = useState(false)
+
+    function formHandler(){
+        setShowForm(!showForm)
+    }
 
     return (
       <div className="Initial">
@@ -30,9 +44,8 @@ function Villains({hero, villains, handleVillains}) {
         {heroVillains}
 
         <hr></hr>
-
-        <VillainsForm hero={hero} villains={heroVillains} handleVillains={handleVillains}/>
-
+        <button onClick={formHandler}>👺click to update your rouges gallery</button>
+        {showForm ? <VillainsForm hero={hero} villains={villains} handleVillains={setVillains}/> : null }
       </div>
     );
   }

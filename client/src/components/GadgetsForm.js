@@ -2,6 +2,8 @@ import {useState} from 'react'
 
 function GadgetForm({hero, gadgets, handleGadgets}) {
 
+  console.log(gadgets)
+
     const [itemName, setItemName] = useState("")
     const [quantity, setQuantity] = useState("")
     const [image, setImage] = useState("")
@@ -17,6 +19,15 @@ function GadgetForm({hero, gadgets, handleGadgets}) {
     function handleImage(e){
       setImage(e.target.value)
       console.log(image)
+    }
+
+    
+    function resetGadgets(){
+        
+      fetch('/gadgets')
+      .then(r=>r.json())
+      .then(handleGadgets)
+      
     }
 
     function newGadget(e) {
@@ -36,9 +47,9 @@ function GadgetForm({hero, gadgets, handleGadgets}) {
               body:JSON.stringify(gadget)
             })
             .then(r => r.json())
-            .then(console.log)
-            // .then(handleGadgets(gadget, ...gadgets))
-            alert('new item created')
+            // .then(console.log)
+            .then(resetGadgets)
+            alert(`${gadget.item_name} created`)
     }
 
     return (
