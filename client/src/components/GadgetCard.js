@@ -4,26 +4,23 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
 
     const [showEdit, setShowEdit] = useState(false)
 
-    const [quantity, setQuantity] = useState()
-    const [itemId, setItemId] = useState()
-    const [heroId, setHeroId] = useState(hero.id)
+    const [quantity, setQuantity] = useState("")
+    const [itemId, setItemId] = useState("")
+    const [heroId, setHeroId] = useState("")
 
     function handleQuantity(e){
-        handleItemId()
-        console.log(e)
-        setQuantity(e.target.value)
-    }
-
-    function handleItemId(e) {
-        console.log(e)
+        // console.log(parseInt(e.target.value))
+        setQuantity(parseInt(e.target.value))
     }
 
     console.log("item-id:", itemId)
     console.log("hero-id:", heroId)
     console.log("quantity:", quantity)
 
-    function editField(){
+    function editField(e){
         setShowEdit(!showEdit)
+        setItemId(e)
+        setHeroId(hero.id)
     }
 
     function resetGadgets(){
@@ -34,14 +31,14 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
         
       }
 
-    function updateGadget(e) {
-        e.preventDefault()
-
-        const update = {
-            id: itemId,  
-            hero_id: heroId,
-            quantity: quantity
-        }
+      function updateGadget(e) {
+          e.preventDefault()
+          
+          const update = {
+              id: itemId,  
+              hero_id: heroId,
+              quantity: quantity
+          }
     
           fetch(`/gadgets/${itemId}`,{
                   method:'PATCH',
@@ -50,10 +47,12 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
                 })
                 .then(r => r.json())
                 .then(resetGadgets)
+                // .then(console.log)
                 alert(`${update.item_name} details updated`)
+                setShowEdit(false)
         }
 
-    const gadget = gadgets.filter( g => g.hero_id === hero.id).map( gad => <div key={gad.id}>{gad.item_name} ~ {gad.quantity} <button onClick={(e) => deleteGadget(gad.id)}>❌</button><button onClick={editField}>🔢</button></div> )
+    const gadget = gadgets.filter( g => g.hero_id === hero.id).map( gad => <div key={gad.id}>{gad.item_name} ~ {gad.quantity} <button onClick={(e) => deleteGadget(gad.id)}>❌</button><button onClick={(e)=>editField(gad.id)}>🔢</button></div> )
 
     return (
 
@@ -63,7 +62,7 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
                     
                     { showEdit ? <form>
                         <input onChange={(e) => handleQuantity(e)} type="number" placeholder="update quantity" name="quantity"></input>
-                        <button onSubmit={updateGadget}>Update</button>
+                        <input onClick={updateGadget} type="submit" value="Update"></input>
                     </form> : null}
                     
                 </div>

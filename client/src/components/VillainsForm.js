@@ -54,7 +54,7 @@ function VillainForm({hero, villains, handleVillains}) {
             fetch('/villains')
             .then(r=>r.json())
             .then(handleVillains)
-            
+
     }
 
     function updateVillain(e) {
@@ -70,17 +70,17 @@ function VillainForm({hero, villains, handleVillains}) {
             hero_id: hero.id,
             location_id: 1,
             notes: notes
-          }
-    
-          fetch(`/villains/${id}`,{
-                  method:'PATCH',
-                  headers:{'Content-Type': 'application/json'},
-                  body:JSON.stringify(update)
-                })
-                .then(r => r.json())
-                .then(resetVillains)
-                alert(`${update.name} details updated`)
         }
+
+        fetch(`/villains/${id}`,{
+                method:'PATCH',
+                headers:{'Content-Type': 'application/json'},
+                body:JSON.stringify(update)
+            })
+            .then(r => r.json())
+            .then(resetVillains)
+            alert(`${update.name} details updated`)
+    }
 
         // <select name="Villains" id="villains">
         // <option value="">Please Select</option>
