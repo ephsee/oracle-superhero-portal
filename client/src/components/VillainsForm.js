@@ -26,14 +26,13 @@ function VillainForm({hero, villains, handleVillains}) {
         setAtLarge(e.target.value)
         console.log(atLarge)
     }
-    // const resetRadioState = ()=>{
-    //     setAtLarge('')
-    // }
-    // const handleALTrue = () =>{
+    // function handleALTrue(){
     //     setAtLarge(true)
+    //     console.log(atLarge)
     // }
-    // const handleALFalse = () =>{
+    // function handleALFalse(){
     //     setAtLarge(false)
+    //     console.log(atLarge)
     // }
     
     function handleThreat(e){
