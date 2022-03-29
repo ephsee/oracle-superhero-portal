@@ -2,7 +2,7 @@ import {NavLink} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import VillainsForm from './VillainsForm'
 
-function Villains({hero}) {
+function Villains({hero, setHero}) {
 
     const [villains, setVillains] = useState([])
 
@@ -12,7 +12,7 @@ function Villains({hero}) {
       .then(setVillains)
     }, [])
 
-    const heroVillains = villains.filter( v => v.hero_id === hero.id).map( v => <div key={v.id}><p>NAME: {v.name} ~ ID: {v.id}</p></div> )
+    const heroVillains = villains.filter( v => v.hero_id === hero.id).map( v => <div key={v.id}><p>{v.name} ~ id: {v.id}</p></div> )
 
     const [showForm, setShowForm] = useState(false)
 
@@ -26,7 +26,7 @@ function Villains({hero}) {
         <div>
           <NavLink
             to="/authorized_hero">
-            Hero Page
+            Details
           </NavLink>
 
           <NavLink
@@ -44,8 +44,8 @@ function Villains({hero}) {
         {heroVillains}
 
         <hr></hr>
-        <button onClick={formHandler}>👺click to update your rouges gallery</button>
-        {showForm ? <VillainsForm hero={hero} villains={villains} handleVillains={setVillains}/> : null }
+        <button onClick={formHandler}>👺update your rouges gallery:</button>
+        {showForm ? <VillainsForm hero={hero} villains={villains} handleVillains={setVillains} setHero={setHero}/> : null }
       </div>
     );
   }

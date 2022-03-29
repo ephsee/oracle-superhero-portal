@@ -53,7 +53,8 @@ function GadgetForm({hero, gadgets, handleGadgets}) {
     }
 
     return (
-      <div> 
+      <div>
+        <h3>Create New Item: </h3>
             <form>
                 <p>Image of Gadget</p>
                 <input onChange={handleImage} type="text" name="Gadget Image" placeholder="Enter URL for image here"/>

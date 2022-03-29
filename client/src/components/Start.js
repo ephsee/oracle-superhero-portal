@@ -17,7 +17,7 @@ function Start ({hero, login}) {
         // const [error, setError] = useState(false)
       
         function signin(e){
-            // e.preventDefault()
+            e.preventDefault()
             const hero = {
                 username: username,
                 password: password
@@ -70,7 +70,7 @@ function Start ({hero, login}) {
     return (
 
         <div>
-            <div><h1>Welcome to ORACLE</h1></div>
+            <div><h1>ORACLE Technologies</h1></div>
             <Login />
         </div>
     )
