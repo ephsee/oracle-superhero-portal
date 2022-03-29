@@ -9,7 +9,7 @@ import Villains from './components/Villains'
 
 function App() {
 
-  // const [loggedIn, setLoggedIn] = useState()
+  // const [loggedIn, setLoggedIn] = useState(false)
 
   const [showHero, setShowHero] = useState([])
 
@@ -44,11 +44,11 @@ function App() {
             <Gadgets hero={showHero}/>
           </Route>
           <Route path="/villains">
-            <Villains hero={showHero}/>
+            <Villains hero={showHero} setHero={setShowHero}/>
           </Route>
 
           {/* <Route exact path="/">
-          {loggedIn ? <Redirect to="/authorized_hero" /> : <Start />}
+          {loggedIn ? <Redirect to="/authorized_hero" /> : <Start login={setShowHero} hero={showHero}/>}
           </Route> */}
 
           <Route exact path="/">

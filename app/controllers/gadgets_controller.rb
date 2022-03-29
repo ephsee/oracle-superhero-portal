@@ -3,7 +3,7 @@ class GadgetsController < ApplicationController
     skip_before_action :authorized_hero, only: [:index, :show, :create, :update, :destroy]
 
     def index
-        render json: Gadget.all, status: :ok
+        render json: Gadget.all.order(id: :ASC), status: :ok
     end
 
     def create

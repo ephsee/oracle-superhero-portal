@@ -1,12 +1,12 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
-function VillainForm({hero, villains, handleVillains}) {
+function VillainForm({hero, villains, handleVillains, setHero}) {
 
     const [name, setName] = useState("")
     const [alterEgo, setAlterEgo] = useState("")
     const [image, setImage] = useState("")
     const [threat, setThreat] = useState("")
-    const [atLarge, setAtLarge] = useState('true')
+    const [atLarge, setAtLarge] = useState('false')
     const [notes, setNotes] = useState("")
     const [id, setId] = useState("")
 
@@ -51,9 +51,9 @@ function VillainForm({hero, villains, handleVillains}) {
 
     function resetVillains(){
         
-            fetch('/villains')
-            .then(r=>r.json())
-            .then(handleVillains)
+        fetch('/villains')
+        .then(r=>r.json())
+        .then(handleVillains)
 
     }
 
@@ -80,6 +80,7 @@ function VillainForm({hero, villains, handleVillains}) {
             .then(r => r.json())
             .then(resetVillains)
             alert(`${update.name} details updated`)
+            setHero(hero)
     }
 
         // <select name="Villains" id="villains">
@@ -92,7 +93,7 @@ function VillainForm({hero, villains, handleVillains}) {
 
     return (
       <div> 
-        <h3>Update Villain Information: </h3>
+        <h3>Modify Villain Information: </h3>
         <div>
             <form>
                 <p>Villain ID</p>

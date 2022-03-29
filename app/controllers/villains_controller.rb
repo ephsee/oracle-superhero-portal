@@ -3,7 +3,7 @@ class VillainsController < ApplicationController
     skip_before_action :authorized_hero, only: [:index, :show, :create, :update, :destroy]
 
     def index
-        render json: Villain.all, status: :ok
+        render json: Villain.all.order(id: :ASC), status: :ok
     end
 
     def create
