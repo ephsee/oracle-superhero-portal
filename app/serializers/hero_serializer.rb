@@ -3,4 +3,5 @@ class HeroSerializer < ActiveModel::Serializer
   has_many :allies
   has_many :gadgets
   has_many :villains
+  has_many :locations, through: :villains
 end
