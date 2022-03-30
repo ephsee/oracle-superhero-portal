@@ -43,7 +43,7 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
                 })
                 .then(r => r.json())
                 .then(resetGadgets)
-                alert(`${itemName} details updated`)
+                alert(`${itemName} DETAILS UPDATED`)
                 setShowEdit(false)
         }
 

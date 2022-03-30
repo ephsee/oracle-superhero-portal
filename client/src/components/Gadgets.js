@@ -19,7 +19,7 @@ function Gadgets({hero}) {
           method: 'DELETE'})
       .then(r=>r.json())
       .then(console.log())
-      alert('item removed')
+      alert('ITEM REMOVED FROM INVENTORY')
       const gadgetsAfterDelete = gadgets.filter( gad => id !== gad.id)
       setGadgets(gadgetsAfterDelete)
   }
@@ -54,8 +54,9 @@ function Gadgets({hero}) {
         Your tools:
         <hr></hr>
         <GadgetCard hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
-        
+        <hr></hr>
         <button onClick={formHandler}>🗡️add to your arsenal:</button>
+        <hr></hr>
         <div>
         {showForm ? <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={setGadgets}/> : null}
         </div>

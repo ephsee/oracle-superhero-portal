@@ -1,19 +1,33 @@
 import {useState} from 'react'
 
-function VillainForm({hero, villains, handleVillains, setHero}) {
+//   const initialState = {
+//     id: "",
+//     name: "",
+//     alter_ego: "",
+//     image: "",
+//     most_wanted: "",
+//     at_large: "",
+//     hero_id: "",
+//     location_id: "",
+//     notes: ""
+// }
+
+function VillainForm({hero, villains, handleVillains, setHero, setShowForm}) {
+
+    // const [formState, setFormState] = useState(initialState)
 
     const [name, setName] = useState("")
     const [alterEgo, setAlterEgo] = useState("")
     const [image, setImage] = useState("")
     const [threat, setThreat] = useState("")
-    const [atLarge, setAtLarge] = useState('false')
+    const [atLarge, setAtLarge] = useState("")
     const [notes, setNotes] = useState("")
     const [id, setId] = useState("")
 
-    console.log(hero.locations)
+    // console.log(hero.locations)
 
-    const theSpot = hero.locations.map( l => l.id)
-    console.log(theSpot[0])
+    // const theSpot = hero.locations.map( l => l.id)
+    // console.log(theSpot[0])
 
     // console.log(villains)
 
@@ -31,7 +45,7 @@ function VillainForm({hero, villains, handleVillains, setHero}) {
     }
     function handleAtLarge(e){
         setAtLarge(e.target.value)
-        console.log(atLarge)
+        // console.log(atLarge)
     }
     // function handleALTrue(){
     //     setAtLarge(true)
@@ -68,13 +82,13 @@ function VillainForm({hero, villains, handleVillains, setHero}) {
 
         const update = {
             id: id,
-            // name: name,
-            // alter_ego: alterEgo,
-            // image: image,
-            // most_wanted: threat,
+            name: name,
+            alter_ego: alterEgo,
+            image: image,
+            most_wanted: threat,
             at_large: atLarge,
             hero_id: hero.id,
-            location_id: theSpot[0],
+            location_id: hero.id,
             notes: notes
         }
 
@@ -83,11 +97,15 @@ function VillainForm({hero, villains, handleVillains, setHero}) {
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(update)
             })
-            .then(r => r.json())
-            .then(resetVillains)
-            alert(`${update.name} details updated`)
-            setHero(hero)
-    }
+            .then(r => {
+                if (r.ok){
+                    r.json().then(resetVillains)
+                    alert(`${update.name} DETAILS UPDATED`)
+                } else {
+                    r.json().then(alert("INVALID UPDATE"))
+                }
+            })
+        }
 
         // <select name="Villains" id="villains">
         // <option value="">Please Select</option>

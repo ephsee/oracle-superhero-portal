@@ -46,10 +46,15 @@ function GadgetForm({hero, gadgets, handleGadgets}) {
               headers:{'Content-Type': 'application/json'},
               body:JSON.stringify(gadget)
             })
-            .then(r => r.json())
-            // .then(console.log)
-            .then(resetGadgets)
-            alert(`${gadget.item_name} created`)
+            .then(r => {
+              if (r.ok){
+                r.json().then(resetGadgets)
+                alert(`${gadget.item_name} CREATED`)
+              }else{
+                r.json().then(alert("INVALID ITEM"))
+              }
+            })
+            console.log(gadget)
     }
 
     return (

@@ -28,14 +28,16 @@ function Start ({hero, login}) {
               headers:{'Content-Type': 'application/json'},
               body:JSON.stringify(hero)
             })
-            .then( r => r.json())
-            .then(login)
-
+            .then( r => {
+              if (r.ok){
+                r.json().then(login)
+                alert("AUTHORIZATION COMPLETE")
+              }else {
+                r.json().then(alert("NOT AUTHORIZED"))
+              }
+            })
             console.log(login)
-
             setUser(true)
-            
-            alert("AUTHORIZATION COMPLETE")
         }
       
         // redirect to authorized_hero
@@ -63,8 +65,8 @@ function Start ({hero, login}) {
               <div>
                   {!user ? <NavLink
                       to="/authorized_hero">
-                      Enter
-                  </NavLink> : "UNAUTHORIZED"}
+                      ENTER
+                  </NavLink> : "AUTHORIZING"}
               </div>
       
             </div>
