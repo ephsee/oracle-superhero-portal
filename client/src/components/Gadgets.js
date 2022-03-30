@@ -18,6 +18,7 @@ function Gadgets({hero}) {
       fetch(`/gadgets/${id}`,{
           method: 'DELETE'})
       .then(r=>r.json())
+      .then(console.log())
       alert('item removed')
       const gadgetsAfterDelete = gadgets.filter( gad => id !== gad.id)
       setGadgets(gadgetsAfterDelete)
@@ -49,11 +50,10 @@ function Gadgets({hero}) {
             Villains
           </NavLink>
         </div>
-
-        Your tools:
-        <GadgetCard hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
-
         <hr></hr>
+        Your tools:
+        <hr></hr>
+        <GadgetCard hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
         
         <button onClick={formHandler}>🗡️add to your arsenal:</button>
         <div>

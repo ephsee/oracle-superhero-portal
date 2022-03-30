@@ -28,6 +28,12 @@ function App() {
     .then(setAllies)
   }, [])
 
+      // console.log(hero.allies[Math.floor(Math.random()*allies.length)])
+
+      // const buddies = showHero.allies.map( a => a.name, a.location, a.alter_ego )
+
+      console.log(allies)
+
   return (
     <div className="App">
       <header className="App-header">    

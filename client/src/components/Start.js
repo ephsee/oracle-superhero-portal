@@ -9,7 +9,7 @@ function Start ({hero, login}) {
         const [password, setPassword] = useState('')
       
         // const [isAuthenticated, setIsAuthenticated] = useState(false);
-        // const [user, setUser] = useState(null);
+        const [user, setUser] = useState("")
       
         // console.log(username)
         // console.log(password)
@@ -30,6 +30,10 @@ function Start ({hero, login}) {
             })
             .then( r => r.json())
             .then(login)
+
+            console.log(login)
+
+            setUser(true)
             
             alert("AUTHORIZATION COMPLETE")
         }
@@ -57,10 +61,10 @@ function Start ({hero, login}) {
               <input onClick={signin} type="submit" value="Submit"></input>
               </form>
               <div>
-                  <NavLink
+                  {!user ? <NavLink
                       to="/authorized_hero">
                       Enter
-                  </NavLink>
+                  </NavLink> : "UNAUTHORIZED"}
               </div>
       
             </div>

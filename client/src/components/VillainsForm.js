@@ -10,17 +10,24 @@ function VillainForm({hero, villains, handleVillains, setHero}) {
     const [notes, setNotes] = useState("")
     const [id, setId] = useState("")
 
+    console.log(hero.locations)
+
+    const theSpot = hero.locations.map( l => l.id)
+    console.log(theSpot[0])
+
+    // console.log(villains)
+
     function handleName(e){
         setName(e.target.value)
-        console.log(name)
+        // console.log(name)
     }
     function handleAlterEgo(e){
         setAlterEgo(e.target.value)
-        console.log(alterEgo)
+        // console.log(alterEgo)
     }
     function handleImage(e){
         setImage(e.target.value)
-        console.log(image)
+        // console.log(image)
     }
     function handleAtLarge(e){
         setAtLarge(e.target.value)
@@ -37,15 +44,15 @@ function VillainForm({hero, villains, handleVillains, setHero}) {
     
     function handleThreat(e){
         setThreat(e.target.value)
-        console.log(threat)
+        // console.log(threat)
     }
     function handleNotes(e){
         setNotes(e.target.value)
-        console.log(notes)
+        // console.log(notes)
     }
     function handleId(e){
         setId(e.target.value)
-        console.log(id)
+        // console.log(id)
     }
 
     function resetVillains(){
@@ -61,13 +68,13 @@ function VillainForm({hero, villains, handleVillains, setHero}) {
 
         const update = {
             id: id,
-            name: name,
-            alter_ego: alterEgo,
-            image: image,
-            most_wanted: threat,
+            // name: name,
+            // alter_ego: alterEgo,
+            // image: image,
+            // most_wanted: threat,
             at_large: atLarge,
             hero_id: hero.id,
-            location_id: 1,
+            location_id: theSpot[0],
             notes: notes
         }
 
@@ -105,27 +112,27 @@ function VillainForm({hero, villains, handleVillains, setHero}) {
                 <input onChange={handleAlterEgo} type="text" name="Villain Alter-Ego" placeholder="Enter Villain's AlterEgo"/>
                 <p>Threat Level</p>
                 <input onChange={handleThreat} type="number" name="Threat Level" placeholder="Enter Threat Level"/>
-                {/* <div> */}
+ 
                     <p>Currently At Large?</p>
                     <label>
                         <input
                             type="radio"
-                            value= 'true'
+                            value= 'false'
                             onChange={handleAtLarge}
-                            checked={atLarge === 'true'}
+                            checked={atLarge === 'false'}
                         />
                         True
                     </label>
                     <label>
                         <input
                             type="radio"
-                            value='false'
                             onChange={handleAtLarge}
-                            checked={atLarge === 'false'}
+                            value='true'
+                            checked={atLarge === 'true'}
                         />
                         False
                     </label>
-                {/* </div> */}
+
                 <p>Notes:</p>
                 <textarea onChange={handleNotes} type="text" name="notes" placeholder="Enter Notes"/>
                 <input onClick={updateVillain} type="submit" value="Submit"></input>

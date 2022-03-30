@@ -13,7 +13,7 @@ puts 'seeding heroes...'
 
 batman = Hero.create(name: "Batman", alter_ego: "Bruce Wayne", base: "The Bat Cave", image: "https://i.pinimg.com/originals/d9/7a/ba/d97abaa3ecc0d3aeb48fe80bd0538557.jpg", password: "vengeance")
 superman = Hero.create(name: "Superman", alter_ego: "Clark Kent", base: "The Fortress of Solitude", image: "https://cdn.vox-cdn.com/thumbor/trjwyjpHgUzhfnfLIVTJ7WsFpSE=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22802887/IMG_DE272BF718E8_1.jpeg", password: "cryptonight")
-wonderWoman = Hero.create(name: "Wonder Woman", alter_ego: "Diana of Themyscira", base: "Themyscira", image: "https://static.wikia.nocookie.net/marvel_dc/images/c/cc/Wonder_Woman_Vol_5_4_Textless.jpg/revision/latest/scale-to-width-down/688?cb=20160810132845", password: "lasso")
+wonderWoman = Hero.create(name: "Wonder Woman", alter_ego: "Diana Prince", base: "Themyscira", image: "https://static.wikia.nocookie.net/marvel_dc/images/c/cc/Wonder_Woman_Vol_5_4_Textless.jpg/revision/latest/scale-to-width-down/688?cb=20160810132845", password: "lasso")
 
 puts 'seeding villains'
 # Villains

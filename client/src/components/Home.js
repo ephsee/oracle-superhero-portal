@@ -12,9 +12,13 @@ function Home({hero, logout}) {
       alert("log out complete - data secured")
     }
 
-    // USE LOCATIONS TO MAP VILLAINS AT LARGE FOR TODOLIST
+    console.log(hero)
 
-    // const toDoList = hero.villains.filter(v => v.at_large === true).map( vil => <div>{vil.name} in {hoods}</div>)
+    // const where = hero.locations[0].name
+
+    // console.log(where)
+
+    // USE LOCATIONS TO MAP VILLAINS AT LARGE FOR TODOLIST
 
     // ask to make sure you want to log out
 
@@ -53,10 +57,12 @@ function Home({hero, logout}) {
         </div>
 
       <div> 
-        <h2>Happy Hunting {hero.alter_ego}</h2>
-        {/* <h3>Villains At Large:</h3> */}
-        {/* <p>{toDoList}</p> */}
-        <img src={hero.image} alt={hero.name}/>
+        <hr></hr>
+        <h2>{hero.alter_ego} from {hero.base}</h2>
+        <hr></hr>
+        <h3>Happy Hunting</h3>
+        <img src={hero.image} alt={hero.name} width="300px"/>
+        {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
       </div>
 
       </>
