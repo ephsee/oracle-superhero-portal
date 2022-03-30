@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function GadgetForm({hero, gadgets, handleGadgets}) {
+function GadgetForm({hero, gadgets, handleGadgets, setShowForm}) {
 
   console.log(gadgets)
 
@@ -54,6 +54,7 @@ function GadgetForm({hero, gadgets, handleGadgets}) {
                 r.json().then(alert("INVALID ITEM"))
               }
             })
+            setShowForm(false)
             console.log(gadget)
     }
 

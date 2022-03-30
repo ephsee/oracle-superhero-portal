@@ -12,7 +12,7 @@ import {useState} from 'react'
 //     notes: ""
 // }
 
-function VillainForm({hero, villains, handleVillains, setHero, setShowForm}) {
+function VillainForm({hero, villains, handleVillains, setHero, setShowForm, setAVil}) {
 
     // const [formState, setFormState] = useState(initialState)
 
@@ -104,16 +104,10 @@ function VillainForm({hero, villains, handleVillains, setHero, setShowForm}) {
                 } else {
                     r.json().then(alert("INVALID UPDATE"))
                 }
+                setShowForm(false)
+                setAVil("")
             })
         }
-
-        // <select name="Villains" id="villains">
-        // <option value="">Please Select</option>
-        // <option value="volvo">Volvo</option>
-        // <option value="saab">Saab</option>
-        // <option value="mercedes">Mercedes</option>
-        // <option value="audi">Audi</option>
-        // </select>
 
     return (
       <div> 

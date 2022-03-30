@@ -1,20 +1,22 @@
 import {NavLink} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import VillainsForm from './VillainsForm'
+import VillainDetails from './VillainDetails'
 
 function Villains({hero, setHero}) {
 
     const [villains, setVillains] = useState([])
 
-    const [showDeets, setShowDeets] = useState("")
+    const [aVil, setAVil] = useState("")
 
-    function toggleCard(){
+    const [showDeets, setShowDeets] = useState(false)
+
+    function toggleCard(v){
       setShowDeets(!showDeets)
+      setAVil(v)
+      console.log(v)
+      console.log(aVil)
     }
-
-    // console.log(showDeets)
-
-    // const [where, setWhere] = useState([...villains])
 
     useEffect(()=>{
       fetch('/villains')
@@ -22,22 +24,14 @@ function Villains({hero, setHero}) {
       .then(setVillains)
     }, [])
 
-    // console.log(villains)
-
-    // const findEm = villains.locations.map(l => )
-
-    // console.log(hero)
-
-    // console.log(where)
-
-    // const tool = hero.gadgets.map( t => t.item_name)
-
-    // console.log(tool)
-
     const whereYaAt = villains.map( vl => <div key={vl.id}> <p>{vl.name} was last seen in {vl.location.name}{vl.at_large ? "~ Status:  CAPTURED" : null}</p> </div>)
-    // console.log(whereYaAt)
 
-    const heroVillains = villains.filter( v => v.hero_id === hero.id).map( v => <div key={v.id}><img src={v.image} alt={v.name} width="200px"/>{showDeets ? <p>{v.name} ~ id: {v.id}</p> : <p>{v.notes}</p>}<h3>{v.at_large!==true ? "GET EM ❓" : "GOT EM ✔️"}</h3></div>)
+    const heroVillains = villains.filter( v => v.hero_id === hero.id).map( v => <div key={v.id}><img src={v.image} alt={v.name} width="200px" onClick={() => toggleCard(v)}/><h3>{v.at_large!==true ? "GET EM ❓" : "GOT EM ✔️"}</h3></div>)
+
+    // onClick={(e)=>editField(gad)
+
+    // const aVillain = villains.filter( v => v.hero_id === hero.id)
+    // console.log(aVillain)
 
     const [showForm, setShowForm] = useState(false)
 
@@ -69,21 +63,21 @@ function Villains({hero, setHero}) {
         <hr></hr>
         Persons of Interest:
         <hr></hr>
-        <div onClick={toggleCard}>
-        {heroVillains}
+        <div>
+        {heroVillains} 
+        {aVil ? <VillainDetails aVil={aVil} hero={hero}/> : null }
         </div>
         </div>
 
         <hr></hr>
         <button onClick={formHandler}>👺update your rouges gallery:</button>
-        {showForm ? <VillainsForm hero={hero} villains={villains} handleVillains={setVillains} setHero={setHero} setShowForm={setShowForm}/> : null }
+        {showForm ? <VillainsForm hero={hero} villains={villains} handleVillains={setVillains} setHero={setHero} setShowForm={setShowForm} setAVil={setAVil}/> : null }
         
         <div>
         <hr></hr>
         <p>See All Villain Activity:</p>
         <hr></hr>
         {whereYaAt}
-  
         </div>
       </div>
     );

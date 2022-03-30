@@ -58,7 +58,7 @@ function Gadgets({hero}) {
         <button onClick={formHandler}>🗡️add to your arsenal:</button>
         <hr></hr>
         <div>
-        {showForm ? <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={setGadgets}/> : null}
+        {showForm ? <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={setGadgets} setShowForm={setShowForm}/> : null}
         </div>
       </div>
     );
