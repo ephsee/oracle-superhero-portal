@@ -15,7 +15,7 @@ function Home({hero, logout}) {
     }
 
     if (hero.error === 'No Active Heros') {
-      return ("nothing to see here")
+      return (<h1 className="blank-page">nothing to see here</h1>)
     } else {
       return (
         <>
@@ -48,29 +48,24 @@ function Home({hero, logout}) {
               Logout
             </NavLink>
           </div>
+        
+        <div>
+          <div> 
+            <hr></hr>
+            <h2>{hero.alter_ego} from {hero.base}</h2>
+            <hr></hr>
+            <h3>Happy Hunting</h3>
+            <div className="hero">
+            <img src={hero.image} alt={hero.name} width="300px"/>
+            {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
+            </div>
+          </div>
+        </div>
   
-        <div> 
-          <hr></hr>
-          <h2>{hero.alter_ego} from {hero.base}</h2>
-          <hr></hr>
-          <h3>Happy Hunting</h3>
-          <img src={hero.image} alt={hero.name} width="300px"/>
-          {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
-        </div>
-      <div className='hero-icontainer'>
-        <div className='hero-info'> 
-          {/* <hr></hr> */}
-          <img className='hero-image' src={hero.image} alt={hero.name} width="300px"/>
-          <h2>{hero.alter_ego} from {hero.base}</h2>
-          {/* <hr></hr> */}
-          <h3>Happy Hunting</h3>
-          
-          {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
-        </div>
-      </div>
+        </>
+      );
+    }
 
-      </>
-    );
   }
   
   export default Home;
