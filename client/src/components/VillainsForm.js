@@ -110,7 +110,7 @@ function VillainForm({hero, villains, handleVillains, setHero, setShowForm, setA
         }
 
     return (
-      <div> 
+      <div className='vil-form'> 
         <h3>Modify Villain Information: </h3>
         <div>
             <form>
@@ -144,7 +144,6 @@ function VillainForm({hero, villains, handleVillains, setHero, setShowForm, setA
                         />
                         False
                     </label>
-
                 <p>Notes:</p>
                 <textarea onChange={handleNotes} type="text" name="notes" placeholder="Enter Notes"/>
                 <input onClick={updateVillain} type="submit" value="Submit"></input>

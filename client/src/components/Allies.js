@@ -30,7 +30,7 @@ function Allies({hero, allies, handleAllies}) {
             <hr></hr>
             Trusted Allies for: {hero.name}
             <hr></hr>
-            <div>
+            <div className='allies'>
             {heroAllies}
             </div>
         </div>

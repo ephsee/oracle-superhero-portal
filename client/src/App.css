@@ -7,7 +7,7 @@ h3 {
   font-family: sans-serif;
 }
 .App {
-  text-align: center;
+  /* text-align: left; */
   background-color: aqua;
   
 }
@@ -22,38 +22,61 @@ h3 {
     linear-gradient(to right, aqua 1px, transparent 1px),
     linear-gradient(to bottom, aqua 1px, transparent 1px);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
 .navbar {
   background-color: aqua;
-  border-radius: 5px;
-  justify-content: top;
+  border: 1px solid  #1c2f55;
+  justify-content: left;
 }
 
 /* Hero */
+.hero-icontainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .hero-info {
   background-color:aqua;
-  font: android;
+  text-align: center;
+  font: sans-serif;
   color: #1c2f55;
   border-radius: 5px;
+  align-items: center;
   justify-content: center;
 }
 .hero-image {
+  border: 5px solid #1c2f55;
   border-color: #1c2f55;
   border-radius: 5px;
 }
 
 /* Allies */
 
-
+.allies {
+  background-color:aqua;
+  border-radius: 5px;
+}
 
 /* villains */
-
-
+.vil-det{
+  background-color:aqua;
+  border-radius: 5px;
+}
+.vil-form{
+  background-color:aqua;
+  border-radius: 5px;
+  display: block;
+}
+.vil-info{
+  font-family: sans-serif;
+  color: #1c2f55;
+}
 
 /* gadgets */

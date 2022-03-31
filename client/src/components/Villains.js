@@ -40,7 +40,7 @@ function Villains({hero, setHero}) {
     }
 
     return (
-      <div className="Initial">
+      <div className="initial">
 
         <div className='navbar'>
           <NavLink

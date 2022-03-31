@@ -55,15 +55,16 @@ function Home({hero, logout}) {
             Logout
           </NavLink>
         </div>
-
-      <div className='hero-info'> 
-        {/* <hr></hr> */}
-        <img className='hero-image' src={hero.image} alt={hero.name} width="300px"/>
-        <h2>{hero.alter_ego} from {hero.base}</h2>
-        {/* <hr></hr> */}
-        <h3>Happy Hunting</h3>
-        
-        {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
+      <div className='hero-icontainer'>
+        <div className='hero-info'> 
+          {/* <hr></hr> */}
+          <img className='hero-image' src={hero.image} alt={hero.name} width="300px"/>
+          <h2>{hero.alter_ego} from {hero.base}</h2>
+          {/* <hr></hr> */}
+          <h3>Happy Hunting</h3>
+          
+          {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
+        </div>
       </div>
 
       </>
