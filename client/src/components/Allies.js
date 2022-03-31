@@ -9,7 +9,7 @@ function Allies({hero, allies, handleAllies}) {
 
     return(
 
-        <div>
+        <div className='navbar'>
 
           <div>
             <NavLink
