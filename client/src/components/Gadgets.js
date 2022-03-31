@@ -51,9 +51,9 @@ function Gadgets({hero}) {
           </NavLink>
         </div>
         <hr></hr>
-        Your tools:
+        Your Tools:
         <hr></hr>
-        <GadgetCard hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
+        <GadgetCard className="gadget-card" hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
         <hr></hr>
         <button onClick={formHandler}>🗡️add to your arsenal:</button>
         <hr></hr>

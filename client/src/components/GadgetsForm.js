@@ -59,7 +59,7 @@ function GadgetForm({hero, gadgets, handleGadgets, setShowForm}) {
     }
 
     return (
-      <div>
+      <div className='gadget-form'>
         <h3>Create New Item: </h3>
             <form>
                 <p>Image of Gadget</p>

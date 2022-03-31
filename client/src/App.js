@@ -36,9 +36,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">    
+        
 
-        <main>
+      
         <Switch>
           <Route exact path="/authorized_hero">
             <Home hero={showHero} logout={setShowHero}/>
@@ -62,9 +62,9 @@ function App() {
           </Route>
 
         </Switch>
-        </main>
+      
         
-      </header>
+      
     </div>
   );
 }

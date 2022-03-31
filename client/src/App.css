@@ -1,5 +1,8 @@
 /* general */
+/* *{ */
+  /* background-color: #1c2f55;
 
+} */
 h2 {
   font-family: sans-serif;
 }
@@ -14,7 +17,7 @@ h3 {
 
 .App {
   background-color: #1c2f55;
-  background-size: 40px 40px;
+  background-size: 60px 60px;
   background-image:
     linear-gradient(to right, aqua 1px, transparent 1px),
     linear-gradient(to bottom, aqua 1px, transparent 1px);
@@ -31,6 +34,7 @@ h3 {
   background-color: aqua;
   border: 1px solid  #1c2f55;
   text-align: left;
+  box-shadow: 0px 13px 19px 0px rgba(0, 0, 0, 0.32);
 }
 
 /* Hero */
@@ -46,6 +50,7 @@ h3 {
 .hero-subcontainer{
   display:table-cell; 
   vertical-align:middle;
+  box-shadow: 0px 0px 19px 17px rgba(0, 0, 0, 0.60);
 }
 .hero-info {
   background-color:aqua;
@@ -87,3 +92,23 @@ h3 {
 }
 
 /* gadgets */
+.gadget-card-container{
+  text-align: center;
+  font: sans-serif;
+  color: #1c2f55;
+  padding: 10px;
+  display: grid;
+  grid-gap: 1rem;
+  justify-content: space-around;
+}
+.gadget-card{
+  background-color:aqua;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+.gadget-img{
+  border-radius: 5px;
+}

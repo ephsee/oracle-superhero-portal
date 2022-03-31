@@ -47,11 +47,12 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
                 setShowEdit(false)
         }
 
-    const gadget = gadgets.filter( g => g.hero_id === hero.id).map( gad => <div key={gad.id}><img src={gad.image} alt={gad.item_name} width="200px"/><p>{gad.item_name} ~ {gad.quantity}</p> <button onClick={(e) => deleteGadget(gad.id)}>❌</button><button onClick={(e)=>editField(gad)}>🔢</button></div> )
+    const gadget = gadgets.filter( g => g.hero_id === hero.id).map( gad => <div  key={gad.id}><img className='gadget-img' src={gad.image} alt={gad.item_name} width="200px"/><p>{gad.item_name} ~ {gad.quantity}</p> <button onClick={(e) => deleteGadget(gad.id)}>❌</button><button onClick={(e)=>editField(gad)}>🔢</button></div> )
 
     return (
 
-        <div>
+        <div class='gadget-card-container'>
+            <div class='gadget-card'>
                 {gadget}
                 <div> 
                     
@@ -62,6 +63,7 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
                     </form> : null}
                     
                 </div>
+            </div>
         </div>
 
     )
