@@ -27,7 +27,7 @@ function Home({hero, logout}) {
     return (
       <>
 
-        <div>
+        <div className="navbar">
           <NavLink
             to="/authorized_hero">
             Details
@@ -56,12 +56,13 @@ function Home({hero, logout}) {
           </NavLink>
         </div>
 
-      <div> 
-        <hr></hr>
+      <div className='hero-info'> 
+        {/* <hr></hr> */}
+        <img className='hero-image' src={hero.image} alt={hero.name} width="300px"/>
         <h2>{hero.alter_ego} from {hero.base}</h2>
-        <hr></hr>
+        {/* <hr></hr> */}
         <h3>Happy Hunting</h3>
-        <img src={hero.image} alt={hero.name} width="300px"/>
+        
         {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
       </div>
 

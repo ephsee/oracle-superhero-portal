@@ -1,14 +1,26 @@
-/* .App {
-  text-align: center;
-}
+/* general */
 
+h2 {
+  font-family: sans-serif;
+}
+h3 {
+  font-family: sans-serif;
+}
+.App {
+  text-align: center;
+  background-color: aqua;
+  
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
 .App-header {
-  background-color: #282c34;
+  background-color: #1c2f55;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, aqua 1px, transparent 1px),
+    linear-gradient(to bottom, aqua 1px, transparent 1px);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,4 +29,31 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
- */
+.navbar {
+  background-color: aqua;
+  border-radius: 5px;
+  justify-content: top;
+}
+
+/* Hero */
+.hero-info {
+  background-color:aqua;
+  font: android;
+  color: #1c2f55;
+  border-radius: 5px;
+  justify-content: center;
+}
+.hero-image {
+  border-color: #1c2f55;
+  border-radius: 5px;
+}
+
+/* Allies */
+
+
+
+/* villains */
+
+
+
+/* gadgets */
