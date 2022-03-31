@@ -11,16 +11,14 @@ h3 {
   background-color: aqua;
   
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
 .App-header {
-  background-color: #1c2f55;
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, aqua 1px, transparent 1px),
-    linear-gradient(to bottom, aqua 1px, transparent 1px);
+  background-color: #282c34;
   min-height: 100vh;
   /* display: flex;
   flex-direction: column; */

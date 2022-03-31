@@ -42,7 +42,7 @@ function Villains({hero, setHero}) {
     return (
       <div className="initial">
 
-        <div className='navbar'>
+        <div>
           <NavLink
             to="/authorized_hero">
             Details

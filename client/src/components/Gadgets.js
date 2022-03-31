@@ -34,7 +34,7 @@ function Gadgets({hero}) {
         
         <div className="Initial">
 
-        <div className='navbar'>
+        <div>
           <NavLink
             to="/authorized_hero">
             Details

@@ -11,7 +11,7 @@ function Allies({hero, allies, handleAllies}) {
 
         <div>
 
-          <div className='navbar'>
+          <div>
             <NavLink
               to="/authorized_hero">
               Details
