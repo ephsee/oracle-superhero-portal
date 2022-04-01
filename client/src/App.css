@@ -116,6 +116,10 @@ a:visited {
   color: none;
 }
 
+img:hover{
+  transform: scale(1.1);
+}
+
 .blank-page{
   font-family: 'Rock Salt', cursive;
   color:green;
