@@ -59,16 +59,16 @@ function GadgetForm({hero, gadgets, handleGadgets, setShowForm}) {
     }
 
     return (
-      <div className='gadget-form'>
+      <div>
         <h3>Create New Item: </h3>
             <form>
                 <p>Image of Gadget</p>
-                <input onChange={handleImage} type="text" name="Gadget Image" placeholder="Enter URL for image here"/>
+                <input className="formBTNfont" onChange={handleImage} type="text" name="Gadget Image" placeholder="Enter img URL"/>
                 <p>Gadget Name</p>
-                <p><input onChange={handleItem} type="text" name="Gadget Name" placeholder="Enter Gadget Name"/></p>
+                <p><input className="formBTNfont" onChange={handleItem} type="text" name="Gadget Name" placeholder="Enter Gadget Name"/></p>
                 <p>Gadget Quantity</p>
-                <p><input onChange={handleQuantity} type="number" name="Gadget Quantity" placeholder="Enter Gadget Quantity"/></p>
-                <input onClick={newGadget} type="submit" value="Submit"></input>
+                <p><input className="formBTNfont" onChange={handleQuantity} type="number" name="Gadget Quantity" placeholder="Enter Quantity"/></p>
+                <input className="formBTNfont buttons"  onClick={newGadget} type="submit" value="Submit"></input>
             </form>
       </div>
       

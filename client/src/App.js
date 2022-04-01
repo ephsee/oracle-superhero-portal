@@ -9,6 +9,8 @@ import Villains from './components/Villains'
 
 function App() {
 
+  // document.location.reload(true)
+
   // const [loggedIn, setLoggedIn] = useState(false)
 
   const [showHero, setShowHero] = useState([])
@@ -35,10 +37,14 @@ function App() {
       console.log(allies)
 
   return (
-    <div className="App">
-        
+    
+    
+    <div>
 
-      
+      <div>
+         
+
+        <main>
         <Switch>
           <Route exact path="/authorized_hero">
             <Home hero={showHero} logout={setShowHero}/>
@@ -62,7 +68,9 @@ function App() {
           </Route>
 
         </Switch>
-      
+        </main>
+
+      </div>
         
       
     </div>

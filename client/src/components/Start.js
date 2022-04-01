@@ -44,31 +44,35 @@ function Start ({hero, login}) {
         // if (!isAuthenticated) return <Login error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
       
           return (
-            <div className="Initial">
-              Login for Access to Top Secret Data
-      
-              <form>
-              <input type="username"
-                id="username"
-                value={username}
-                placeholder="username"
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <input type="password"
-                id="password"
-                value={password}
-                placeholder="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <input onClick={signin} type="submit" value="Submit"></input>
-              </form>
-              <div>
+            <div className="middle">
+            <div className="start">
+              <div className="start">Login for Access to Top Secret Data:</div><br></br>
+                <div>
+                  <form>
+                  <input className="start" type="username"
+                    id="username"
+                    value={username}
+                    placeholder="username"
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                  <input className="start" type="password"
+                    id="password"
+                    value={password}
+                    placeholder="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <input className="start" onClick={signin} type="submit" value="Submit"></input>
+                  </form>
+                </div>
+                <br></br>
+              <div className="link">
                   {!user ? <NavLink
                       to="/authorized_hero">
-                      ENTER
+                      <h1>ENTER</h1>
                   </NavLink> : "AUTHORIZING"}
               </div>
       
+            </div>
             </div>
           );
         }
@@ -76,7 +80,9 @@ function Start ({hero, login}) {
     return (
 
         <div>
-            <div><h1>ORACLE Technologies</h1></div>
+              <div className="start big">
+                <h1>ORACLE TECHNOLOGIES</h1>
+              </div>
             <Login />
         </div>
     )

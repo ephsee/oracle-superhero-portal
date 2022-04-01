@@ -11,59 +11,70 @@ function Home({hero, logout}) {
       method: 'DELETE'})
       .then(r=>r.json())
       .then(logout)
+      document.location.reload(true)
       alert("LOG OUT COMPLETE - DATA SECURED")
     }
 
     if (hero.error === 'No Active Heros') {
-      return (<h1 className="blank-page">nothing to see here</h1>)
+      return (<div className="start"><h1 className="blank-page">nothing to see here</h1> <div><img src="https://i.kym-cdn.com/photos/images/newsfeed/001/005/957/aa1.gif" alt="uh uh uh" width="700px"/></div> <h1 className="blank-page">you should probably sign in</h1> </div>)
     } else {
       return (
         <>
   
-          <div className='navbar'>
+          <div >
             <NavLink
+            className="links"
               to="/authorized_hero">
               Details
             </NavLink>
   
             <NavLink
+            className="links"
               to="/allies">
               Allies
             </NavLink>
   
             <NavLink
+            className="links"
               to="/gadgets">
               Gadgets
             </NavLink>
   
             <NavLink
+            className="links"
               to="/villains">
               Villains
             </NavLink>
   
             <NavLink
+            className="links linksLOGOUT"
               to="/"
               onClick={(e) => signout(e)}
               >
               Logout
             </NavLink>
           </div>
-        
-        <div className='hero-icontainer'>
-          <div className='hero-subcontainer'>
-            <div className='hero-info'> 
-              {/* <hr></hr> */}
-              <img className='hero-image' src={hero.image} alt={hero.name} width="300px"/>
-              <h2>{hero.alter_ego} from {hero.base}</h2>
-              {/* <hr></hr> */}
-              <h3>Happy Hunting</h3>
-              
-              <div className="hero">
-              
-              {/* <p>{hero.name} has been vigilantly protecting the innocent and defending {where}</p> */}
-              </div>
+        <div className="App padthis">
+            <div className="hero-icontainer padthis">
+                <div className="hero-subcontainer hero-info-background padthis"> 
+                    
+                    <h2>{hero.alter_ego} from {hero.base}</h2>
+                    
+                    <h3>Happy Hunting</h3>
+                      <div className="hero-image ">
+                        <img src={hero.image} alt={hero.name} width="300px"/>
+                      </div>
+                  <div>
+                    <ul className="buttons lists">
+
+                    <li><h3 style={{color: "green"}}>Allies Access: Granted</h3></li>
+                    <li><h3 style={{color: "green"}}>Gadgets Access: Granted</h3></li>
+                    <li><h3 style={{color: "green"}}>Villains Access: Granted</h3></li>
+                    
+                    </ul>
+                  </div>
+                </div>
             </div>
-          </div>
         </div>
   
         </>

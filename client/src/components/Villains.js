@@ -24,9 +24,9 @@ function Villains({hero, setHero}) {
       .then(setVillains)
     }, [])
 
-    const whereYaAt = villains.map( vl => <div key={vl.id}> <p>{vl.name} was last seen in {vl.location.name}{vl.at_large ? "~ Status:  CAPTURED" : null}</p> </div>)
+    const whereYaAt = villains.map( vl => <div key={vl.id}> <p>{vl.name} was last seen in {vl.location.name}{vl.at_large ? <p style={{color: "green"}}> Status:  CAPTURED</p> : <p style={{color: "red"}}> Status: AT LARGE</p> }</p> </div>)
 
-    const heroVillains = villains.filter( v => v.hero_id === hero.id).map( v => <div key={v.id}><img src={v.image} alt={v.name} width="200px" onClick={() => toggleCard(v)}/><h3>{v.at_large!==true ? "GET EM ❓" : "GOT EM ✔️"}</h3></div>)
+    const heroVillains = villains.filter( v => v.hero_id === hero.id).map( v => <div className="hero-info-background padthis" key={v.id}><img src={v.image} alt={v.name} width="200px" onClick={() => toggleCard(v)} border="3px solid black"/><h3 className="buttons">{v.at_large!==true ? "GET EM ❓" : "GOT EM ✔️"}</h3></div>)
 
     // onClick={(e)=>editField(gad)
 
@@ -40,43 +40,61 @@ function Villains({hero, setHero}) {
     }
 
     return (
-      <div className="initial">
+      <div className="something">
 
-        <div className='navbar'>
-          <NavLink
-            to="/authorized_hero">
-            Details
-          </NavLink>
-
-          <NavLink
-            to="/allies">
-            Allies
-          </NavLink>
-
-          <NavLink
-            to="/gadgets">
-            Gadgets
-          </NavLink>
+        <div>
+        <NavLink
+            className="links"
+              to="/authorized_hero">
+              Details
+            </NavLink>
+  
+            <NavLink
+            className="links"
+              to="/allies">
+              Allies
+            </NavLink>
+  
+            <NavLink
+            className="links"
+              to="/gadgets">
+              Gadgets
+            </NavLink>
+  
+            <NavLink
+            className="links"
+              to="/villains">
+              Villains
+            </NavLink>
+  
         </div>
         
-        <div>
-        <hr></hr>
+        <div className="buttons padthis">
+          
         Persons of Interest:
-        <hr></hr>
-        <div>
-        {heroVillains} 
-        {aVil ? <VillainDetails aVil={aVil} hero={hero}/> : null }
+        
         </div>
+        <div>
+          <div className="villains">
+            {heroVillains} 
+          </div>
+          
+          {aVil ? <VillainDetails aVil={aVil} hero={hero}/> : null }
+          
         </div>
 
-        <hr></hr>
-        <button onClick={formHandler}>👺update your rouges gallery:</button>
-        {showForm ? <VillainsForm hero={hero} villains={villains} handleVillains={setVillains} setHero={setHero} setShowForm={setShowForm} setAVil={setAVil}/> : null }
         
-        <div>
-        <hr></hr>
-        <p>See All Villain Activity:</p>
-        <hr></hr>
+        <div className="buttons">
+        <button className="formBTNfont" onClick={formHandler} >👺update your rouges gallery:</button>
+        </div>
+        
+        <div className="forms">
+        {showForm ? <VillainsForm hero={hero} villains={villains} handleVillains={setVillains} setHero={setHero} setShowForm={setShowForm} setAVil={setAVil}/> : null }
+        </div>
+        <div className="villains-info">
+        
+        <h1>See All Villain Activity:</h1>
+        
         {whereYaAt}
         </div>
       </div>

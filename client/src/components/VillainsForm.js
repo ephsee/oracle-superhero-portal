@@ -110,20 +110,20 @@ function VillainForm({hero, villains, handleVillains, setHero, setShowForm, setA
         }
 
     return (
-      <div className='vil-form'> 
+      <div> 
         <h3>Modify Villain Information: </h3>
         <div>
             <form>
                 <p>Villain ID</p>
-                <input onChange={handleId}type="number" name="Villain ID" placeholder="Enter Villain ID"/>
+                <input className="formBTNfont" onChange={handleId}type="number" name="Villain ID" placeholder="Enter Villain ID"/>
                 <p>Image of Villain</p>
-                <input onChange={handleImage}type="text" name="Villain Image" placeholder="Enter url for image here"/>
+                <input className="formBTNfont" onChange={handleImage}type="text" name="Villain Image" placeholder="Enter url for image here"/>
                 <p>Villain's Name</p>
-                <input onChange={handleName} type="text" name="Villain Name" placeholder="Enter Villain Name"/>
+                <input className="formBTNfont" onChange={handleName} type="text" name="Villain Name" placeholder="Enter Villain Name"/>
                 <p>Villain's Alter Ego</p>
-                <input onChange={handleAlterEgo} type="text" name="Villain Alter-Ego" placeholder="Enter Villain's AlterEgo"/>
+                <input className="formBTNfont" onChange={handleAlterEgo} type="text" name="Villain Alter-Ego" placeholder="Enter Villain's AlterEgo"/>
                 <p>Threat Level</p>
-                <input onChange={handleThreat} type="number" name="Threat Level" placeholder="Enter Threat Level"/>
+                <input className="formBTNfont" onChange={handleThreat} type="number" name="Threat Level" placeholder="Enter Threat Level"/>
  
                     <p>Currently At Large?</p>
                     <label>
@@ -144,9 +144,10 @@ function VillainForm({hero, villains, handleVillains, setHero, setShowForm, setA
                         />
                         False
                     </label>
+
                 <p>Notes:</p>
-                <textarea onChange={handleNotes} type="text" name="notes" placeholder="Enter Notes"/>
-                <input onClick={updateVillain} type="submit" value="Submit"></input>
+                <textarea className="formBTNfont" onChange={handleNotes} type="text" name="notes" placeholder="Enter Notes"/>
+                <input className="formBTNfont buttons" onClick={updateVillain} type="submit" value="Submit"></input>
             </form>
         </div>
       </div>

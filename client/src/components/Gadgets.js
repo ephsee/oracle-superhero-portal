@@ -31,35 +31,54 @@ function Gadgets({hero}) {
     }
   
         return (
-        
-        <div className="Initial">
-
-        <div className='navbar'>
-          <NavLink
-            to="/authorized_hero">
-            Details
-          </NavLink>
-
-          <NavLink
-            to="/allies">
-            Allies
-          </NavLink>
-
-          <NavLink
-            to="/villains">
-            Villains
-          </NavLink>
-        </div>
-        <hr></hr>
-        Your Tools:
-        <hr></hr>
-        <GadgetCard className="gadget-card" hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
-        <hr></hr>
-        <button onClick={formHandler}>🗡️add to your arsenal:</button>
-        <hr></hr>
         <div>
-        {showForm ? <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={setGadgets} setShowForm={setShowForm}/> : null}
+        
+          <div className="something">
+
+        <div>
+        <NavLink
+            className="links"
+              to="/authorized_hero">
+              Details
+            </NavLink>
+  
+            <NavLink
+            className="links"
+              to="/allies">
+              Allies
+            </NavLink>
+  
+            <NavLink
+            className="links"
+              to="/gadgets">
+              Gadgets
+            </NavLink>
+  
+            <NavLink
+            className="links"
+              to="/villains">
+              Villains
+            </NavLink>
+  
         </div>
+            <div className="buttons padthis">
+           
+            Your tools:
+           
+            </div>
+        <div>
+            <GadgetCard hero={hero} gadgets={gadgets} deleteGadget={deleteGadget} handleGadgets={setGadgets}/>
+        </div>
+            <div className="buttons">
+           
+            <button className="formBTNfont" onClick={formHandler}>🗡️add to your arsenal:</button>
+
+            </div>
+           
+            </div>
+            <div className="buttons">
+            {showForm ? <GadgetsForm hero={hero} gadgets={gadgets} handleGadgets={setGadgets} setShowForm={setShowForm}/> : null}
+            </div>
       </div>
     );
   }

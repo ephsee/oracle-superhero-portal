@@ -4,15 +4,15 @@ function VillainDetails({aVil, hero}) {
     console.log("villain: ", aVil)
 
     return(
-        <div className="vil-det">
-            <hr></hr>
+        <div className="vil-det hero-info-background">
+            
 
-            <div className='vil-info'>Name: {aVil.name}</div>
-            <div className='vil-info'>Notes: {aVil.notes}</div>
-            <div className='vil-info'>ID: {aVil.id}</div>
+            <div className="info">Name: {aVil.name}</div>
+            <div className="info">Notes: {aVil.notes}</div>
+            <div className="info">ID: {aVil.id}</div>
             
             {/* {whereIs} */}
-            <hr></hr>
+            
         </div>
     )
 }
