@@ -63,7 +63,7 @@ function Gadgets({hero}) {
         </div>
             <div className="buttons padthis hero-info-background">
            
-            Your tools:
+            Your Tools:
            
             </div>
         <div>
