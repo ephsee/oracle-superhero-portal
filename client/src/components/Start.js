@@ -46,7 +46,7 @@ function Start ({hero, login}) {
           return (
             <div className="middle">
             <div className="start">
-              <div className="start">Login for Access to Top Secret Data:</div><br></br>
+              <div className="start">Log In for Access to Top Secret Data:</div><br></br>
                 <div>
                   <form>
                   <input className="start" type="username"

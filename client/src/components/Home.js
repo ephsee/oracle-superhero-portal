@@ -62,10 +62,10 @@ function Home({hero, logout}) {
                     
                     <h3>Happy Hunting</h3>
                       <div className="hero-image ">
-                        <img src={hero.image} alt={hero.name} width="300px"/>
+                        <img className="heroIcon" src={hero.image} alt={hero.name} width="300px"/>
                       </div>
                   <div>
-                    <ul className="buttons lists">
+                    <ul className="buttons lists hero-info-background">
 
                     <li><h3 style={{color: "green"}}>Allies Access: Granted</h3></li>
                     <li><h3 style={{color: "green"}}>Gadgets Access: Granted</h3></li>

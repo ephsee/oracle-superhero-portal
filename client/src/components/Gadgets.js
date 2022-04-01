@@ -61,7 +61,7 @@ function Gadgets({hero}) {
             </NavLink>
   
         </div>
-            <div className="buttons padthis">
+            <div className="buttons padthis hero-info-background">
            
             Your tools:
            

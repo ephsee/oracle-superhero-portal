@@ -37,12 +37,12 @@ function Allies({hero, allies, handleAllies}) {
             </NavLink>
   
           </div>
-          <div className="buttons">
-            <hr></hr>
+          <div className="buttons padthis hero-info-background">
+            
             Trusted Allies for: {hero.name}
-            <hr></hr>
+            
             </div>
-            <div className="villains">
+            <div className="villains hero-info-background">
             {heroAllies}
             </div>
         </div>

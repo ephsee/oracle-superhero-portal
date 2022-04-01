@@ -69,7 +69,7 @@ function Villains({hero, setHero}) {
   
         </div>
         
-        <div className="buttons padthis">
+        <div className="buttons padthis hero-info-background">
           
         Persons of Interest:
         
