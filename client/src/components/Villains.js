@@ -75,7 +75,7 @@ function Villains({hero, setHero}) {
         
         </div>
         <div>
-          <div className="villains">
+          <div className="villains villain-flash">
             {heroVillains} 
           </div>
           

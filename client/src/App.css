@@ -138,7 +138,7 @@ img:hover{
 .allies{
   display: flex;
   justify-content: space-around;
-  animation: loadup2 .25s ease-in 0s 1 normal both;
+  /* animation: loadup2 .25s ease-in 0s 1 normal both; */
 
   /* text-decoration: none; */
 }
@@ -153,7 +153,16 @@ img:hover{
 .villains{
   display: flex;
   justify-content: space-around;
+  /* animation: loadup2 .25s ease-in 0s 1 normal both; */
+  /* animation: loadup 1s ease-in 0s 1 normal both; */
+}
+
+.ally-flash{
   animation: loadup2 .25s ease-in 0s 1 normal both;
+}
+
+.villain-flash {
+  animation: loadup 1s ease-in 0s 1 normal both;
 }
 
 .forms {
@@ -236,7 +245,7 @@ h3 {
   /* flex-direction: column; */
   align-items: center;
   /* justify-content: center; */
-  animation: loadup 1s ease 0s 1 normal both;
+  animation: loadup 1s ease-in 0s 1 normal both;
 }
 .hero-subcontainer{
   display: flex;

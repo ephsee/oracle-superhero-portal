@@ -52,7 +52,7 @@ function GadgetCard({hero, gadgets, deleteGadget, handleGadgets}) {
     return (
 
         <div className="vil-det hero-info-background">
-            <div className="gadgets">
+            <div className="gadgets ally-flash">
                 {gadget}
             </div>
                 <div> 
