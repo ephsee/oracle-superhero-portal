@@ -138,6 +138,7 @@ img:hover{
 .allies{
   display: flex;
   justify-content: space-around;
+  animation: loadup2 .25s ease-in 0s 1 normal both;
 
   /* text-decoration: none; */
 }
@@ -146,11 +147,13 @@ img:hover{
   display: flex;
   justify-content: space-between;
   overflow: auto;
+  animation: loadup2 .25s ease-in 0s 1 normal both;
 }
 
 .villains{
   display: flex;
   justify-content: space-around;
+  animation: loadup2 .25s ease-in 0s 1 normal both;
 }
 
 .forms {
@@ -169,6 +172,7 @@ img:hover{
   display: grid;
   justify-content: center;
   float: left;
+  /* animation: typing 2s steps(22), blink .5s step-end infinite alternate; */
 }
 
 .info{
@@ -232,6 +236,7 @@ h3 {
   /* flex-direction: column; */
   align-items: center;
   /* justify-content: center; */
+  animation: loadup 1s ease 0s 1 normal both;
 }
 .hero-subcontainer{
   display: flex;
@@ -316,12 +321,65 @@ h3 {
   grid-auto-rows: auto;
   grid-gap: 1rem;
   border-radius: 5px;
+  
 }
 .gadget-img{
   border-radius: 5px;
   padding: 10px;
+  
 }
 
 .padthis{
   padding: 20px
 }
+
+
+/* animations */
+@keyframes loadup {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes loadup2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* @keyframes loadup2 {
+  0% {
+    transform: scaleY(0);
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
+} */
+/* @keyframes typer {
+  from { width: 0 }
+  to { width: 100% }
+} */
+/* @keyframes typing {
+  from {
+    width: 0
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+} */
